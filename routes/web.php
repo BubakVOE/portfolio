@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\ChampionsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NavController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SkinsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +18,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+
+route::get('/', [NavController::class, 'index'])->name('home');
+
+// champions
+    route::get('/champions', [ChampionsController::class, 'index'])->name('champions');
+    route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
+    route::get('/champions/newbite-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
+
+    route::get('/champions/loading-skins', [SkinsController::class, 'loadingSkins'])->name('loadingSkins');
+    route::get('/champions/art-skins', [SkinsController::class, 'artSkins'])->name('artSkins');
+
+//patch notes
+    Route::get('/news/lolko', [NewsController::class, 'lolko']);
+    Route::get('/news/web', [NewsController::class, 'web']);
+
+
+
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
