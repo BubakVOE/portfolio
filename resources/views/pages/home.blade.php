@@ -4,8 +4,8 @@
 @section('content')
 
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative bg-white overflow-hidden w-full lg:mt-60">
-    <div class="max-w-7xl mx-auto ">
+<div class="relative bg-white overflow-hidden w-full lg:mt-20 ">
+    <div class="max-w-7xl mx-auto  ">
         <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
 
             <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -64,7 +64,7 @@
 
                         <div class="rounded-md flex">
                             <input
-                            class="w-96 flex items-center border-none  justify-center px-8 py-3 text-base font-medium rounded-l-lg text-white focus:outline-none bg-own-red hover:bg-own-orange md:py-4 md:text-lg md:px-10 placeholder-white"
+                            class="w-96 flex items-center border-none justify-center px-8 py-3 text-base font-medium rounded-l-lg text-white focus:outline-none bg-own-red hover:bg-own-orange md:py-4 md:text-lg md:px-10 placeholder-white placeholder-opacity-30"
                             type="text"
                             placeholder="DanDy"
                             >

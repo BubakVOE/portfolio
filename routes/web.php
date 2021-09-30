@@ -21,12 +21,15 @@ use App\Http\Controllers\SkinsController;
 Auth::routes();
 
 
-route::get('/', [NavController::class, 'index'])->name('home');
+route::get('/', [NavController::class, 'index'])->name('domu');
 
 // champions
     route::get('/champions', [ChampionsController::class, 'index'])->name('champions');
+    route::get('/champion/{champion}', [ChampionsController::class, 'show'])->name('champions-show');
     route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
     route::get('/champions/newbite-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
+
+
 
     route::get('/champions/loading-skins', [SkinsController::class, 'loadingSkins'])->name('loadingSkins');
     route::get('/champions/art-skins', [SkinsController::class, 'artSkins'])->name('artSkins');
