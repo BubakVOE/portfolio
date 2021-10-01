@@ -6,29 +6,6 @@
 
 
 
-<!--
-  This example requires Tailwind CSS v2.0+
-
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
 <div class="bg-white">
     <div class="pt-6">
         <nav aria-label="Breadcrumb">
@@ -306,132 +283,91 @@
 
             <div class="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <!-- Description and details -->
-            <div>
-                <h3 class="sr-only">Description</h3>
+                <div>
+                    <h3 class="sr-only">Description</h3>
 
-                <div class="space-y-6">
-                    <p class="text-base text-gray-900">
-                        {{ $champData['blurb'] }}
-                    </p>
+                    <div class="space-y-6">
+                        <p class="text-base text-gray-900">
+                            {{ $champData['blurb'] }}
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="mt-10">
-                <h3 class="text-sm font-medium text-gray-900">Spells</h3>
+                <div class="mt-10">
+                    <h3 class="text-sm font-medium text-gray-900">Spells</h3>
 
-                <div class="mt-4">
-                    <ul role="list" class="pl-4 list-disc text-sm space-y-5">
-                        <li class="text-gray-400 list-none flex items-center ">
-                            <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/passive/'.$champData['passive']['image']['full'] }}">
+                    <div class="mt-4">
+                        <ul role="list" class="pl-4 list-disc text-sm space-y-5">
+                            <li class="text-gray-400 list-none flex items-center ">
+                                <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/passive/'.$champData['passive']['image']['full'] }}">
 
-                            <div class="flex flex-col ml-4">
-                                <p class="">{{ $champData['passive']['description'] }}</p>
-                            </div>
-                        </li>
-
-                        <li class="text-gray-400 list-none flex items-center none">
-                            <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][0]['image']['full'] }}">
-
-                            <div class="flex flex-col ml-4">
-                                <p class="">{{ $champData['spells'][0]['description'] }}</p>
-                                <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
-                                    <h1>Mana cost:</h1>
-                                    <h1 class="">{{ $champData['spells'][0]['costBurn'] }}</h1>
+                                <div class="flex flex-col ml-4">
+                                    <p class="">{{ $champData['passive']['description'] }}</p>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
 
-                        <li class="text-gray-400 list-none flex items-center ">
-                            <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][1]['image']['full'] }}">
+                            <li class="text-gray-400 list-none flex items-center none">
+                                <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][0]['image']['full'] }}">
 
-                            <div class="flex flex-col ml-4">
-                                <p class="">{{ $champData['spells'][1]['description'] }}</p>
-                                <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
-                                    <h1>Mana cost:</h1>
-                                    <h1 class="">{{ $champData['spells'][1]['costBurn'] }}</h1>
+                                <div class="flex flex-col ml-4">
+                                    <p class="">{{ $champData['spells'][0]['description'] }}</p>
+                                    <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
+                                        <h1>Mana cost:</h1>
+                                        <h1 class="">{{ $champData['spells'][0]['costBurn'] }}</h1>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
 
-                        <li class="text-gray-400 list-none flex items-center ">
-                            <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][2]['image']['full'] }}">
+                            <li class="text-gray-400 list-none flex items-center ">
+                                <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][1]['image']['full'] }}">
 
-                            <div class="flex flex-col ml-4">
-                                <p class="">{{ $champData['spells'][2]['description'] }}</p>
-                                <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
-                                    <h1>Mana cost:</h1>
-                                    <h1 class="">{{ $champData['spells'][2]['costBurn'] }}</h1>
+                                <div class="flex flex-col ml-4">
+                                    <p class="">{{ $champData['spells'][1]['description'] }}</p>
+                                    <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
+                                        <h1>Mana cost:</h1>
+                                        <h1 class="">{{ $champData['spells'][1]['costBurn'] }}</h1>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="text-gray-400 list-none flex items-center ">
-                            <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][3]['image']['full'] }}">
+                            </li>
 
-                            <div class="flex flex-col ml-4">
-                                <p class="">{{ $champData['spells'][3]['description'] }}</p>
-                                <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
-                                    <h1>Mana cost:</h1>
-                                    <h1 class=" ">{{ $champData['spells'][3]['costBurn'] }}</h1>
+                            <li class="text-gray-400 list-none flex items-center ">
+                                <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][2]['image']['full'] }}">
+
+                                <div class="flex flex-col ml-4">
+                                    <p class="">{{ $champData['spells'][2]['description'] }}</p>
+                                    <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
+                                        <h1>Mana cost:</h1>
+                                        <h1 class="">{{ $champData['spells'][2]['costBurn'] }}</h1>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                            <li class="text-gray-400 list-none flex items-center ">
+                                <img src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][3]['image']['full'] }}">
+
+                                <div class="flex flex-col ml-4">
+                                    <p class="">{{ $champData['spells'][3]['description'] }}</p>
+                                    <div class="flex justify-between w-1/2 text-center text-black-custom font-bold mt-1">
+                                        <h1>Mana cost:</h1>
+                                        <h1 class=" ">{{ $champData['spells'][3]['costBurn'] }}</h1>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="mt-10">
-                <h2 class="text-sm font-medium text-gray-900">Details</h2>
+                <div class="mt-10">
+                    <h2 class="text-sm font-medium text-gray-900">Details</h2>
 
-                <div class="mt-4 space-y-6">
-                <p class="text-sm text-gray-600">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &quot;Charcoal Gray&quot; limited release.</p>
+                    <div class="mt-4 space-y-6">
+                    <p class="text-sm text-gray-600">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &quot;Charcoal Gray&quot; limited release.</p>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-
-
-{{-- <div class="bg-white">
-    <div class="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
-        <div>
-            <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ $champion->name }}</h2>
-            <p class="mt-4 text-gray-500">{{ $champData['blurb'] }}</p>
-
-            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8 ">
-
-                <div class="">
-                    <h1>Jak hrát s <span class="font-bold">{{ $champion->name }}</span></h1>
-
-                    @foreach ($champData['allytips'] as $allytips)
-                        <div class="border-t border-gray-200 ">
-                            <dd class="my-2 text-sm text-gray-500">{{ $champData['allytips'][0] }}</dd>
-                        </div>
-                    @endforeach
-                </div>
-
-                <div>
-                    <h1>Jak hrát proti <span class="font-bold">{{ $champion->name }}</span></h1>
-
-                    @foreach ($champData['enemytips'] as $enemytips)
-                        <div class="border-t border-gray-200 ">
-                            <dd class="my-2 text-sm text-gray-500">{{ $enemytips }}</dd>
-                        </div>
-                    @endforeach
-
-                </div>
-
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-            <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ $champion->nickname }}_0.jpg" class="bg-gray-100 rounded-lg">
-        </div>
-    </div>
-</div> --}}
 
 
 @endsection

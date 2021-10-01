@@ -35,8 +35,9 @@ route::get('/', [NavController::class, 'index'])->name('domu');
     route::get('/champions/art-skins', [SkinsController::class, 'artSkins'])->name('artSkins');
 
 //patch notes
-    Route::get('/news/lolko', [NewsController::class, 'lolko']);
-    Route::get('/news/web', [NewsController::class, 'web']);
+    route::get('/news', [NewsController::class,'index'])->name('news');
+    Route::get('/news/lolko', [NewsController::class, 'lolko'])->name('newsLolko');
+    Route::get('/news/web', [NewsController::class, 'web'])->name('newsWeb');
 
 
 

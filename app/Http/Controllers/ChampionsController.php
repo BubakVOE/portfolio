@@ -16,10 +16,12 @@ class ChampionsController extends Controller
 
         $test = http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion.json')->collect();
         $champions = Champion::all();
+        $amount = Champion::count();
 
 
         return view('pages/champions/index',[
             'champions' => $champions,
+            'amount' => $amount,
         ]);
     }
 

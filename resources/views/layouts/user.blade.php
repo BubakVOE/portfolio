@@ -21,7 +21,7 @@
     <x-navbar-pc/>
 </div>
 
-    <div class="w-10/12 m-auto">
+    <div class="m-auto">
         @yield('content')
     </div>
 

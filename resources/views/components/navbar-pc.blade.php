@@ -242,7 +242,7 @@
 
             </div>
 
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
+            <a href="{{ route('news') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
                 Patch Notes
             </a>
 

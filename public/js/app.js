@@ -2113,37 +2113,6 @@ window.onclick = function (event) {
   }
 }; /////////////////////////////////////////////////////
 
-
-function hamburgerToggle() {
-  var x = document.getElementById("hamburgerLinks");
-
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
-function champToggle() {
-  var x = document.getElementById("champLinks");
-
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
-function vipToggle() {
-  var x = document.getElementById("vipLinks");
-
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
