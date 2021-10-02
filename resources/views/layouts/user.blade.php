@@ -17,11 +17,11 @@
 <body>
 
 <div class="relative bg-own-black">
-    <x-navbar-mobile/>
-    <x-navbar-pc/>
+    <x-nav.navbar-mobile/>
+    <x-nav.navbar-pc/>
 </div>
 
-    <div class="m-auto">
+    <div class="m-auto bg-own-lightgray">
         @yield('content')
     </div>
 

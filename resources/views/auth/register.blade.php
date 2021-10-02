@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="bg-own-darkgray">
         <div class="md:py-20 m-auto flex items-center w-full md:w-10/12 md:px-2 p-4 ">
             <div class="h-full max-w-md mx-auto rounded-lg overflow-hidden md:max-w-2xl md:w-9/12 w-full bg-gradient-to-br from-own-orange to-gradient-red">
@@ -17,7 +16,7 @@
                     <div class="w-full p-3 px-6 py-10">
 
                         <div>
-                            <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+                            <img class="mx-auto h-12 w-auto" src="{{ asset('img/navbar/riot-fist.png') }}" alt="Workflow">
                             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
                                 Zaregistruj si svůj učet
                             </h2>
@@ -155,6 +154,5 @@
             </div>
         </div>
     </div>
-
 
 @endsection

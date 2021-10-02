@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\ChampionsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NavController;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\SkinsController;
+
+use App\Http\Controllers\Nav\HomeController;
+use App\Http\Controllers\Nav\NewsController;
+use App\Http\Controllers\Nav\ChampionsController;
+use App\Http\Controllers\other\SkinsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +21,18 @@ use App\Http\Controllers\SkinsController;
 
 Auth::routes();
 
-
-route::get('/', [NavController::class, 'index'])->name('domu');
+// hlávní stránka
+    route::get('/', [HomeController::class, 'index'])->name('domu');
 
 // champions
     route::get('/champions', [ChampionsController::class, 'index'])->name('champions');
     route::get('/champion/{champion}', [ChampionsController::class, 'show'])->name('champions-show');
     route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
-    route::get('/champions/newbite-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
+    route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
 
-
-
-    route::get('/champions/loading-skins', [SkinsController::class, 'loadingSkins'])->name('loadingSkins');
-    route::get('/champions/art-skins', [SkinsController::class, 'artSkins'])->name('artSkins');
+// skins
+    route::get('/skins', [SkinsController::class, 'index'])->name('skins');
+    route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');
 
 //patch notes
     route::get('/news', [NewsController::class,'index'])->name('news');
@@ -42,5 +42,4 @@ route::get('/', [NavController::class, 'index'])->name('domu');
 
 
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

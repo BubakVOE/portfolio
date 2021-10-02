@@ -8,6 +8,30 @@ module.exports = {
     theme: {
       extend: {
 
+        animation: {
+            backdrop: 'backdrop 20s infinite',
+        },
+
+        keyframes: {
+            backdrop: {
+                '0%': {
+                    backgroundColor: '#ff0000',
+                },
+                '25%': {
+                    backgroundColor: '#008aff',
+                },
+                '50%': {
+                    backgroundColor: '#303030',
+                },
+                '75%': {
+                    backgroundColor: '#14CC60',
+                },
+                '100%': {
+                    backgroundColor: '#ff0000',
+                },
+            },
+        },
+
         height: {
           '1/12':  '8.333333%',
           '2/12':	'16.666667%',
@@ -37,6 +61,9 @@ module.exports = {
         },
 
         padding: {
+           '25': '7.25rem',
+           '26': '7.5rem',
+           '27': '7.75rem',
           '1/12':  '8.333333%',
           '2/12':	'16.666667%',
           '3/12':	'25%',

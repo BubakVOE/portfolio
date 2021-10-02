@@ -6,7 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "dolejska-daniel/riot-api": "^4.1",
+        "blood72/laravel-riot-api": "^4.0",
+        "dolejska-daniel/riot-api": "^5",
+        "dolejska-daniel/riot-api-datadragon": "1",
+        "dolejska-daniel/riot-api-league": "1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.54",
