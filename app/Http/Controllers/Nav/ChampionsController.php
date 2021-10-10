@@ -34,10 +34,10 @@ class ChampionsController extends Controller
     {
         $champData = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$champion->nickname.'.json')->collect()['data'][$champion->nickname];
 
-        $skinsDatas = $champData['skins'];
+            $skinsDatas = $champData['skins'];
 
         $test = Http::get('ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][0]['id'].'.jpg')->collect();
-
+        
         $skinsNum = [];
 
         foreach ($skinsDatas as $skinsData) {

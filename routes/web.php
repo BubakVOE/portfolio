@@ -5,8 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Nav\HomeController;
 use App\Http\Controllers\Nav\NewsController;
+use App\Http\Controllers\Nav\UsersController;
 use App\Http\Controllers\Nav\ChampionsController;
+
 use App\Http\Controllers\other\SkinsController;
+use App\Http\Controllers\other\ProfileController;
+use App\Http\Controllers\other\SummonerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +37,15 @@ Auth::routes();
 // skins
     route::get('/skins', [SkinsController::class, 'index'])->name('skins');
     route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');
+
+// user data
+    route::get('/user/{username}', [UsersController::class, 'index'])->name('user-index');
+    route::get('/user/{username}/edit', [UsersController::class, 'show'])->name('user-show');
+    route::post('/user/update', [UsersController::class, 'update'])->name('user-update');
+
+// profile lolko
+    route::get('/summoners', [SummonerController::class, 'index'])->name('summoner');
+    route::get('/summoner/{username}', [SummonerController::class, 'show'])->name('summoner-show');
 
 //patch notes
     route::get('/news', [NewsController::class,'index'])->name('news');

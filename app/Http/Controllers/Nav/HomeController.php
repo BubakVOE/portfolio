@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers\nav;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(User $id)
     {
-        return view('pages.home');
+
+        $test = User::find($id);
+
+        return view('pages.home', [
+            'test' => $test
+        ]);
     }
 }

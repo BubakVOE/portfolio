@@ -1,0 +1,33 @@
+
+
+/champion/{id}
+    -smazat id a nahradit champion nickname
+
+
+
+
+
+
+user
+    -přidat street address, city, state, !! avatar !!
+    -Avatar -> basic z githubu
+            -> možnost editace
+
+accounts
+    -vytvořit nový model, který bude odkazovat na daného Usera
+    -accounts->belongsTo(User)
+    -user->belongToMany(accounts)
+
+/user/{username}/edit
+    -League of legends
+        ->možnost přidat další account
+        ->přidat formuláře pro smazat, editace
+
+/user/{username}
+    -mít možnost zobrazovat více profílu
+        -eune BubakVOE, FeelStoryMan
+        -euw  Raffy, Filip
+        +základní statistiky divize, profileIcon, LP, w/l
+
+
+asdaassdadad

@@ -21,7 +21,7 @@
     <x-nav.navbar-pc/>
 </div>
 
-    <div class="m-auto bg-own-lightgray">
+    <div class="m-auto bg-own-darkgray">
         @yield('content')
     </div>
 
@@ -54,6 +54,15 @@
 
     function vipToggle() {
         var x = document.getElementById("vipLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function userToggle() {
+        var x = document.getElementById("userLinks");
         if (x.style.display === "block") {
             x.style.display = "none";
         } else {

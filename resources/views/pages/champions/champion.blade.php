@@ -3,12 +3,10 @@
 
 @section('content')
 
-
-
-
 <div class="bg-own-lightgray">
     <div class="pt-6">
-        <nav aria-label="Breadcrumb">
+
+        <nav>
             <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
                 <li>
                     <div class="flex items-center">
@@ -79,7 +77,7 @@
 
                     </div>
 
-                    <form class="mt-10">
+                    <div class="mt-10">
 
                         <div>
                             <h3 class="text-md font-Raleway font-bold text-gray-900">Další informace</h3>
@@ -131,10 +129,13 @@
                             </fieldset>
                         </div>
 
-                        <h1 class="text-center cursor-pointer mt-10 md:mt-20 w-full bg-own-black rounded-md py-3 px-8 text-base font-medium text-white hover:bg-black-custom focus:outline-none">
-                            Prohlédnout si Splash obrázky
-                        </h1>
-                    </form>
+                        <div class="text-center mt-10 md:mt-20 font-medium text-white  focus:outline-none">
+                            <a href="{{ route('skins-show', $champion->id ) }}" class="bg-own-black rounded-md hover:bg-black-custom cursor-pointer w-full  py-3 px-8 text-base ">
+                                Prohlédnout si Splash obrázky
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div class="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-black-custom lg:pr-8">

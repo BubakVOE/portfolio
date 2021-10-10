@@ -81,6 +81,10 @@ module.exports = {
           red: {
             'custom' : '#e30022',
           },
+
+          green: {
+            'custom' : '#70e000',
+          },
           gray: {
             'dark' : '#090909',
 
