@@ -3,6 +3,14 @@
 @section('content')
 
 
+
+<div class="bg-green-500">
+
+
+
+</div>
+
+
 <div class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 sm:py-0 xl:py-5 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg">
 
@@ -25,7 +33,7 @@
 
                 <li>
                     <div class="flex items-center">
-                        <a href="{{ route('user-index', $user->username) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
+                        <a href="{{ route('user-index', $user->familyName) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
                             {{ $user->username }}
                         </a>
 
@@ -38,7 +46,7 @@
 
                 <li>
                     <div class="flex items-center">
-                        <a href="{{ route('user-show', $user->username) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
+                        <a href="{{ route('user-show', $user->familyName) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
                             Edit
                         </a>
                     </div>
@@ -47,10 +55,7 @@
             </ol>
         </nav>
 
-        <form   action="{{ route('user-update') }}"
-                enctype="multipart/form-data"
-                method="POST">
-        @csrf
+
             {{-- league of legends --}}
             <div class="mt-10 sm:mt-0">
                 <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -66,88 +71,140 @@
                     <div class="mt-5 md:mt-0 md:col-span-2">
                         <div class="shadow overflow-hidden sm:rounded-md">
                             <div class="px-4 py-5 bg-own-darkgray sm:p-6">
+
                                 <div class="grid grid-cols-6 gap-6">
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label for="username" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Uživatelské jméno</label>
-                                        <input type="text"
-                                                name="username"
-                                                id="username"
-                                                value="{{ $user->username }}"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+
+                                    <div class="col-span-6 sm:col-span-12 flex justify-center ">
+
+                                        <button id="asdasd" class=" rounded-md w-full">
+
+                                            <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-green-custom border-dashed rounded-md ">
+                                                <div class="space-y-2 text-center flex flex-col items-center justify-center">
+                                                    <svg class="mx-auto h-12 w-12 text-green-custom" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+                                                    </svg>
+
+                                                </div>
+                                            </div>
+                                        </button>
+
+
+
+
+
+
                                     </div>
 
-
-                                    <div class="col-span-6 sm:col-span-3">
-                                        <label  for="country"
-                                                class="block text-sm font-medium text-black-custom">Region</label>
-
-                                        <select id="country"
-                                                name="country"
-                                                autocomplete="country"
-                                                class="mt-1 block w-full py-2 px-3 border border-own-lightgray bg-own-lightgray rounded-md shadow-sm focus:outline-none focus:ring-0 focus:border-own-lightgray sm:text-sm">
-
-                                                @if ($user['region'] == 'EUNE')
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="NA">North America</option>
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="LAS">Las</option>
-                                                    <option value="LAC">Lan</option>
-                                                    <option value="OCE">Oceania</option>
-
-                                                @elseif ($user['region'] == 'NA')
-                                                    <option value="NA">North America</option>
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="LAS">Las</option>
-                                                    <option value="LAC">Lan</option>
-                                                    <option value="OCE">Oceania</option>
-
-                                                @elseif ($user['region'] == 'EW')
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="NA">North America</option>
-                                                    <option value="LAS">Las</option>
-                                                    <option value="LAC">Lan</option>
-                                                    <option value="OCE">Oceania</option>
-
-                                                @elseif ($user['region'] == 'LAS')
-                                                    <option value="LAS">Las</option>
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="NA">North America</option>
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="LAC">Lan</option>
-                                                    <option value="OCE">Oceania</option>
-
-                                                @elseif ($user['region'] == 'LAC')
-                                                    <option value="LAC">Lan</option>
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="NA">North America</option>
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="LAS">Las</option>
-                                                    <option value="OCE">Oceania</option>
-
-                                                @elseif ($user['region'] == 'OCE')
-                                                    <option value="OCE">Oceania</option>
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="NA">North America</option>
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="LAS">Las</option>
-                                                    <option value="LAC">Lan</option>
-
-                                                @else
-                                                    <option value="EUNE">Europe Nordic & East</option>
-                                                    <option value="NA">North America</option>
-                                                    <option value="EW">Europe West</option>
-                                                    <option value="LAS">Las</option>
-                                                    <option value="LAC">Lan</option>
-                                                    <option value="OCE">Oceania</option>
-
-                                                @endif
-
-                                        </select>
-                                    </div>
+                                    <x-user.summoner-add/>
 
                                 </div>
+
+
+                                @foreach ($profiles as $profile)
+
+                                    @if ($profile ['summoner_id'] == Auth()->user()->id)
+
+                                        <div class="grid grid-cols-6 gap-6 my-8">
+
+                                            <div class="col-span-6 sm:col-span-2">
+                                                <label for="username" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Uživatelské jméno</label>
+                                                <input type="text"
+                                                        disabled
+                                                        name="username"
+                                                        id="username"
+                                                        value="{{ $profile->username }}"
+                                                        class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                            </div>
+
+                                            <div class="col-span-6 sm:col-span-4 ml-10 ">
+                                                <label for="username" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Region</label>
+
+                                                <div class="flex items-center justify-between  w-full">
+
+                                                    <select id="country"
+                                                        name="country"
+                                                        autocomplete="country"
+                                                        class="mt-1 block w-5/12 py-2 px-3 border border-own-lightgray bg-own-lightgray rounded-md shadow-sm focus:outline-none focus:ring-0 focus:border-own-lightgray sm:text-sm">
+
+                                                        @if ($profile['region'] == 'EUNE')
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="NA">North America</option>
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="LAS">Las</option>
+                                                            <option value="LAC">Lan</option>
+                                                            <option value="OCE">Oceania</option>
+
+                                                        @elseif ($profile['region'] == 'NA')
+                                                            <option value="NA">North America</option>
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="LAS">Las</option>
+                                                            <option value="LAC">Lan</option>
+                                                            <option value="OCE">Oceania</option>
+
+                                                        @elseif ($profile['region'] == 'EW')
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="NA">North America</option>
+                                                            <option value="LAS">Las</option>
+                                                            <option value="LAC">Lan</option>
+                                                            <option value="OCE">Oceania</option>
+
+                                                        @elseif ($profile['region'] == 'LAS')
+                                                            <option value="LAS">Las</option>
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="NA">North America</option>
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="LAC">Lan</option>
+                                                            <option value="OCE">Oceania</option>
+
+                                                        @elseif ($profile['region'] == 'LAC')
+                                                            <option value="LAC">Lan</option>
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="NA">North America</option>
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="LAS">Las</option>
+                                                            <option value="OCE">Oceania</option>
+
+                                                        @elseif ($profile['region'] == 'OCE')
+                                                            <option value="OCE">Oceania</option>
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="NA">North America</option>
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="LAS">Las</option>
+                                                            <option value="LAC">Lan</option>
+
+                                                        @else
+                                                            <option value="EUNE">Europe Nordic & East</option>
+                                                            <option value="NA">North America</option>
+                                                            <option value="EW">Europe West</option>
+                                                            <option value="LAS">Las</option>
+                                                            <option value="LAC">Lan</option>
+                                                            <option value="OCE">Oceania</option>
+                                                        @endif
+                                                    </select>
+
+                                                    <div class="flex">
+                                                        <button class="mx-1 bg-blue-500 px-2 py-1 rounded">
+                                                            Potvrdit
+                                                        </button>
+                                                        <button class="mx-1 bg-red-custom px-2 py-1 rounded">
+                                                            Smazat
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    @endif
+
+                                @endforeach
+
+
+
                             </div>
 
                         </div>
@@ -155,6 +212,10 @@
                 </div>
             </div>
 
+        <form   action="{{ route('user-update') }}"
+                enctype="multipart/form-data"
+                method="POST">
+                @csrf
         {{-- osobní informace --}}
             <div class="mt-10 sm:mt-0">
 
@@ -343,8 +404,6 @@
 
             </div>
 
-
-
             <div class="flex justify-end ">
                 <div class="px-4 sm:px-6 sm:py-0 xl:py-5rounded-lg">
                     <button type="submit" class="px-6 py-3  font-bold shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-0 focus:ring-offset-0">
@@ -352,9 +411,6 @@
                     </button>
                 </div>
             </div>
-
-
-
 
         </form>
 
@@ -364,7 +420,36 @@
 </div>
 
 
+<script>
 
+
+// Get the modal
+var opacity = document.getElementById("Opacity");
+
+// Get the button that opens the modal
+var btn = document.getElementById("asdasd");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    opacity.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    opacity.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == opacity) {
+    opacity.style.display = "none";
+    }
+}
+
+</script>
 
 
 @endsection

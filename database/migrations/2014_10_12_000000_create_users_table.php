@@ -14,17 +14,33 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+
             $table->string('givenName');
             $table->string('familyName');
-            $table->boolean('isAdmin')->default(0);
-            $table->string('username')->unique();
-            $table->string('region');
+            $table->string('username');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('isAdmin')->default(0);
+
             $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
+        });
+
+
+        Schema::create('summoners', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('username');
+            $table->string('region');
+
+            $table->unsignedInteger('summoner_id');
+            $table->timestamps();
+            $table->foreign('summoner_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
         });
     }
 

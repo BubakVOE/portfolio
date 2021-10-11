@@ -56,8 +56,8 @@
                                 </div>
                             </div>
 
-                            <div class="md:flex md:justify-between">
-                                <div class="mt-14 md:mt-16 relative md:w-5/12">
+                            <div class="md:flex md:justify-between ">
+                                <div class="mt-14 md:mt-16 relative md:w-7/12 mx-auto">
                                     <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
                                         Přezdívka
                                     </span>
@@ -68,7 +68,7 @@
                                             placeholder="BubakVOE"
                                             >
                                 </div>
-
+{{--
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
                                     <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
                                         Server
@@ -84,7 +84,7 @@
                                         <option value="OCE">Oceania</option>
                                     </select>
 
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="mt-14 md:mt-16 relative md:w-7/12 md:mx-auto">
