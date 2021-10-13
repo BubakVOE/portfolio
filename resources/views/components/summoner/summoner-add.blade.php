@@ -16,7 +16,7 @@
 
                     <div class="w-full h-full  flex justify-center items-center ">
 
-                        <form   action="/user/store"
+                        <form   action="{{ route('summoner-store') }}"
                                 method="POST"
                                 class="w-full">
                         @csrf

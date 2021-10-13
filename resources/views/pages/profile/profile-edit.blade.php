@@ -2,14 +2,13 @@
 
 @section('content')
 
-
-
-<div class="bg-green-500">
-
-
-
-</div>
-
+@if(session()->has('message'))
+    <div class="absolute left-1/2 transform -translate-x-1/2 top-24 translate-y-1 bg-green-custom px-3 py-2 rounded-md">
+        <h1 class="text-xl text-black-custom">
+            {{ session()->get('message') }}
+        </h1>
+    </div>
+@endif
 
 <div class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 sm:py-0 xl:py-5 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg">
@@ -33,7 +32,7 @@
 
                 <li>
                     <div class="flex items-center">
-                        <a href="{{ route('user-index', $user->familyName) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
+                        <a href="{{ route('profile-index', $user->username) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
                             {{ $user->username }}
                         </a>
 
@@ -46,7 +45,7 @@
 
                 <li>
                     <div class="flex items-center">
-                        <a href="{{ route('user-show', $user->familyName) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
+                        <a href="" class="mr-2 text-sm font-medium text-gray-600 capitalize">
                             Edit
                         </a>
                     </div>
@@ -55,8 +54,7 @@
             </ol>
         </nav>
 
-
-            {{-- league of legends --}}
+        {{--účty league of legends --}}
             <div class="mt-10 sm:mt-0">
                 <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
@@ -76,8 +74,7 @@
 
                                     <div class="col-span-6 sm:col-span-12 flex justify-center ">
 
-                                        <button id="asdasd" class=" rounded-md w-full">
-
+                                        <button id="modalBtn" class=" rounded-md w-full">
                                             <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-green-custom border-dashed rounded-md ">
                                                 <div class="space-y-2 text-center flex flex-col items-center justify-center">
                                                     <svg class="mx-auto h-12 w-12 text-green-custom" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,119 +85,15 @@
                                             </div>
                                         </button>
 
-
-
-
-
-
                                     </div>
 
-                                    <x-user.summoner-add/>
+                                    <x-summoner.summoner-add/>
 
                                 </div>
 
 
                                 @foreach ($profiles as $profile)
-
-                                    @if ($profile ['summoner_id'] == Auth()->user()->id)
-
-                                        <div class="grid grid-cols-6 gap-6 my-8">
-
-                                            <div class="col-span-6 sm:col-span-2">
-                                                <label for="username" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Uživatelské jméno</label>
-                                                <input type="text"
-                                                        disabled
-                                                        name="username"
-                                                        id="username"
-                                                        value="{{ $profile->username }}"
-                                                        class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-4 ml-10 ">
-                                                <label for="username" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Region</label>
-
-                                                <div class="flex items-center justify-between  w-full">
-
-                                                    <select id="country"
-                                                        name="country"
-                                                        autocomplete="country"
-                                                        class="mt-1 block w-5/12 py-2 px-3 border border-own-lightgray bg-own-lightgray rounded-md shadow-sm focus:outline-none focus:ring-0 focus:border-own-lightgray sm:text-sm">
-
-                                                        @if ($profile['region'] == 'EUNE')
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="NA">North America</option>
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="LAS">Las</option>
-                                                            <option value="LAC">Lan</option>
-                                                            <option value="OCE">Oceania</option>
-
-                                                        @elseif ($profile['region'] == 'NA')
-                                                            <option value="NA">North America</option>
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="LAS">Las</option>
-                                                            <option value="LAC">Lan</option>
-                                                            <option value="OCE">Oceania</option>
-
-                                                        @elseif ($profile['region'] == 'EW')
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="NA">North America</option>
-                                                            <option value="LAS">Las</option>
-                                                            <option value="LAC">Lan</option>
-                                                            <option value="OCE">Oceania</option>
-
-                                                        @elseif ($profile['region'] == 'LAS')
-                                                            <option value="LAS">Las</option>
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="NA">North America</option>
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="LAC">Lan</option>
-                                                            <option value="OCE">Oceania</option>
-
-                                                        @elseif ($profile['region'] == 'LAC')
-                                                            <option value="LAC">Lan</option>
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="NA">North America</option>
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="LAS">Las</option>
-                                                            <option value="OCE">Oceania</option>
-
-                                                        @elseif ($profile['region'] == 'OCE')
-                                                            <option value="OCE">Oceania</option>
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="NA">North America</option>
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="LAS">Las</option>
-                                                            <option value="LAC">Lan</option>
-
-                                                        @else
-                                                            <option value="EUNE">Europe Nordic & East</option>
-                                                            <option value="NA">North America</option>
-                                                            <option value="EW">Europe West</option>
-                                                            <option value="LAS">Las</option>
-                                                            <option value="LAC">Lan</option>
-                                                            <option value="OCE">Oceania</option>
-                                                        @endif
-                                                    </select>
-
-                                                    <div class="flex">
-                                                        <button class="mx-1 bg-blue-500 px-2 py-1 rounded">
-                                                            Potvrdit
-                                                        </button>
-                                                        <button class="mx-1 bg-red-custom px-2 py-1 rounded">
-                                                            Smazat
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                    @endif
-
+                                    <x-summoner.summoner-profile :profile="$profile"/>
                                 @endforeach
 
 
@@ -212,10 +105,11 @@
                 </div>
             </div>
 
-        <form   action="{{ route('user-update') }}"
-                enctype="multipart/form-data"
-                method="POST">
-                @csrf
+        <form
+            {{-- action="{{ route('profile-update') }}" --}}
+            enctype="multipart/form-data"
+            method="POST">
+            @csrf
         {{-- osobní informace --}}
             <div class="mt-10 sm:mt-0">
 
@@ -427,7 +321,7 @@
 var opacity = document.getElementById("Opacity");
 
 // Get the button that opens the modal
-var btn = document.getElementById("asdasd");
+var btn = document.getElementById("modalBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

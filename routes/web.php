@@ -5,12 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Nav\HomeController;
 use App\Http\Controllers\Nav\NewsController;
-use App\Http\Controllers\Nav\UsersController;
-use App\Http\Controllers\Nav\ChampionsController;
-use App\Http\Controllers\Nav\ProfileController;
 
 
+use App\Http\Controllers\nav\ProfileController;
 use App\Http\Controllers\other\SkinsController;
+use App\Http\Controllers\Nav\ChampionsController;
 use App\Http\Controllers\other\SummonerController;
 
 /*
@@ -39,16 +38,21 @@ Auth::routes();
     route::get('/skins', [SkinsController::class, 'index'])->name('skins');
     route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');
 
-// User data
-    route::get('/user/{username}', [UsersController::class, 'index'])->name('user-index');
-    route::get('/user/{username}/edit', [UsersController::class, 'show'])->name('user-show');
-    route::post('/user/update', [UsersController::class, 'update'])->name('user-update');
-    route::post('/user/store', [UsersController::class, 'store']);
+// Profile data
+    route::get('/profile/{username}', [ProfileController::class, 'index'])->name('profile-index');
+    route::get('/profile/{username}/edit', [ProfileController::class, 'edit'])->name('profile-edit');
+
 
 
 // Summoner lolko
-    route::get('/summoners', [SummonerController::class, 'index'])->name('summoner');
+    route::get('/summoner', [SummonerController::class, 'index'])->name('summoner');
     route::get('/summoner/{username}', [SummonerController::class, 'show'])->name('summoner-show');
+
+    route::delete('/summoner/{id}/delete', [SummonerController::class, 'delete'])->name('summoner-delete');
+    route::put('/summoner/{id}/update', [SummonerController::class, 'update'])->name('summoner-update');
+    
+    route::post('/summoner/store', [SummonerController::class, 'store'])->name('summoner-store');
+
 
 // patch notes
     route::get('/news', [NewsController::class,'index'])->name('news');

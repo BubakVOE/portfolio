@@ -23,7 +23,7 @@
 
             <li>
                 <div class="flex items-center">
-                    <a href="{{ route('user-index', $user->username) }}" class="mr-2 text-sm font-medium text-red-custom capitalize">
+                    <a href="{{ route('profile-index', $user->username) }}" class="mr-2 text-sm font-medium text-red-custom capitalize">
                         {{ $user->username }}
                     </a>
                 </div>
