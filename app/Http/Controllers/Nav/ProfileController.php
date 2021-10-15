@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+
+// índex
     public function index(){
 
         $user = Auth()->user();
@@ -20,14 +22,15 @@ class ProfileController extends Controller
         ]);
     }
 
+// edit
     public function edit($id)
     {
         $user = Auth()->user();
 
         $userId = Auth()->user()->id;
-        
-        $profiles = Summoner::all();
 
+        $profiles = Summoner::whereIn('summoner_id', [$userId])
+        ->get();
 
         return view('pages.profile.profile-edit', [
             'user' => $user,
@@ -35,32 +38,47 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function update(Request $request)
-    {
-        $userId = Auth::user()->id;
-        $user = User::findOrFail($userId);
 
-        $user->update([
-            $user->givenName = request('givenName'),
-            $user->familyName = request('familyName'),
-            $user->region = request('region'),
+// store
+    public function store(Request $request)
+    {
+        $summoner = Summoner::create([
+            'username' => $request -> input('username'),
+            'region' => $request -> input('region'),
+            'summoner_id' => auth()->user()->id
+        ]);
+
+        return redirect()->back()->with('message', 'Úspěšně jsi přidal účet');
+    }
+
+
+// update
+    public function update(Request $request, $id)
+    {
+
+        $test = Summoner::findOrFail($id);
+
+
+        $test->update([
+            'username' => $request -> input('username'),
+            'region' => $request -> input('region'),
         ]);
 
         return redirect()->back()->with('message', 'Úspešně jsi změnil data');
     }
 
+// delete
+    public function delete($id)
+    {
+        $test = Summoner::find($id);
 
-    // public function store(Request $request)
-    // {
-    //     $summoner = Summoner::create([
-    //         'username' => $request -> input('username'),
-    //         'region' => $request -> input('region'),
-    //         'summoner_id' => auth()->user()->id
-    //     ]);
+        $test->delete();
 
-    //     return redirect()->back();
+        return back()->with('message', 'Úspešně se ti povedlo smazat');
+    }
 
-    // }
+
+
 
 }
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\user;
+namespace App\View\Components\profile;
 
 use Illuminate\View\Component;
 
-class summoner-add extends Component
+class profiles-information extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class summoner-add extends Component
      */
     public function render()
     {
-        return view('components.user.summoner-add');
+        return view('components.profile.profiles-information');
     }
 }

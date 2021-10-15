@@ -87,16 +87,48 @@
 
                                     </div>
 
-                                    <x-summoner.summoner-add/>
+                                    <x-profile.profile-add/>
 
                                 </div>
 
+                                <div class="flex flex-col mt-10 mb-0">
+                                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                            <div class="overflow-hidden">
+                                                <table class="min-w-full divide-y divide-black-custom b">
+                                                    <thead class="bg-gray-medium">
+                                                        <tr>
+                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                                id
+                                                            </th>
 
-                                @foreach ($profiles as $profile)
-                                    <x-summoner.summoner-profile :profile="$profile"/>
-                                @endforeach
+                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                                username
+                                                            </th>
 
+                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                                region
+                                                            </th>
 
+                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                                Updatovat
+                                                            </th>
+
+                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                                smazat
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    @foreach ($profiles as $profile)
+                                                        <x-profile.profile-update :profile='$profile'/>
+                                                    @endforeach
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
 

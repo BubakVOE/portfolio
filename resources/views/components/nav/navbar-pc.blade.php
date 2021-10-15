@@ -264,8 +264,8 @@
                     <div id="userLinks" class="hidden absolute z-40 -ml-4 mt-3 transform px-2 w-screen max-w-sm sm:px-0 lg:ml-0 -left-1 ">
                         <div class="rounded-lg shadow-lg overflow-hidden ">
                             <div class="relative grid gap-6 bg-own-lightgray px-5 py-6 sm:gap-8 sm:p-8">
-                                <a href="/summoner" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                {{-- <a href="/summoner/{{ Auth::user()->username }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"> --}}
+                                {{-- <a href="/summoner" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"> --}}
+                                <a href="/summoner/{{ Auth::user()->username }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
@@ -282,7 +282,27 @@
                                 </a>
 
 
+                                <a href="/profile/{{ Auth::user()->username }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+
+
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                                    </svg>
+
+                                    <div class="ml-4">
+                                        <p class="text-base font-medium text-gray-900">
+                                            Přehled
+                                        </p>
+                                        <p class="mt-1 text-sm text-gray-500">
+                                            Prohlédnout si informace o tvém League of Legends účtu
+                                        </p>
+                                    </div>
+                                </a>
+
+
                             </div>
+
 
                             <div class="px-5 py-5 bg-own-darkgray space-y-6 sm:flex justify-center sm:space-y-0 sm:space-x-10 sm:px-8">
                                 <div class="flow-root">
@@ -311,7 +331,7 @@
                                         <span class="ml-3">Nastavení</span>
                                     </a>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>

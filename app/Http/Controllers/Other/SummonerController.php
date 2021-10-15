@@ -35,43 +35,4 @@ class SummonerController extends Controller
         ]);
     }
 
-
-// store
-    public function store(Request $request)
-    {
-        $summoner = Summoner::create([
-            'username' => $request -> input('username'),
-            'region' => $request -> input('region'),
-            'summoner_id' => auth()->user()->id
-        ]);
-
-        return redirect()->back()->with('message', 'Úspěšně jsi přidal účet');
-    }
-
-// store
-    public function delete($id)
-    {
-        $test = Summoner::find($id);
-
-        $test->delete();
-
-        return back()->with('message', 'Úspešně se ti povedlo smazat');
-    }
-
-// store
-    public function update(Request $request, $id)
-    {
-        $update = Summoner::find($id);
-
-        $update->update([
-            'username' => $request -> input('username'),
-            'region' => $request -> input('region'),
-        ]);
-
-        return redirect()->back();
-    }
-
-
-
-
 }

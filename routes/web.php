@@ -41,6 +41,9 @@ Auth::routes();
 // Profile data
     route::get('/profile/{username}', [ProfileController::class, 'index'])->name('profile-index');
     route::get('/profile/{username}/edit', [ProfileController::class, 'edit'])->name('profile-edit');
+    route::post('/profile/store', [ProfileController::class, 'store'])->name('profile-store');
+    route::put('/profile/{id}/update', [ProfileController::class, 'update'])->name('profile-update');
+    route::delete('/profile/{id}/delete', [ProfileController::class, 'delete'])->name('profile-delete');
 
 
 
@@ -48,10 +51,8 @@ Auth::routes();
     route::get('/summoner', [SummonerController::class, 'index'])->name('summoner');
     route::get('/summoner/{username}', [SummonerController::class, 'show'])->name('summoner-show');
 
-    route::delete('/summoner/{id}/delete', [SummonerController::class, 'delete'])->name('summoner-delete');
-    route::put('/summoner/{id}/update', [SummonerController::class, 'update'])->name('summoner-update');
-    
-    route::post('/summoner/store', [SummonerController::class, 'store'])->name('summoner-store');
+    // route::put('/summoner/{id}/update', [SummonerController::class, 'update'])->name('summoner-update');
+
 
 
 // patch notes

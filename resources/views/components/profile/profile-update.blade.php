@@ -1,28 +1,34 @@
-@if ($profile ['summoner_id'] == Auth()->user()->id)
+<tbody class="bg-gray-400">
+    <tr>
+        <td class="px-6 py-4 whitespace-nowrap">
+            <h1 class="text-sm font-medium text-gray-900">
+                {{ $profile['id'] }}
+            </h1>
+        </td>
 
-    <div class="grid grid-cols-6 gap-6 my-8">
 
-        <div class="col-span-6 sm:col-span-2">
-            <label for="username" class="block text-sm font-medium text-black-custom">
-                <span class="font-bold text-red-custom mr-2">*</span>Uživatelské jméno
-            </label>
-            
-            <input type="text"
+        <form
+        action="{{ route('profile-update', $profile['id']) }}"
+        method="POST"
+        >
+        @csrf
+        @method('put')
+
+            <td class="px-6 py-4 whitespace-nowrap">
+                <input
+                    type="text"
                     name="username"
                     id="username"
-                    value="{{ $profile->username }}"
-                    class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
-        </div>
+                    value="{{ $profile['username'] }}"
+                    class="focus:ring-0 focus:border-own-lightgray block shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+            </td>
 
-        <div class="col-span-6 sm:col-span-4 ml-10 ">
-            <label for="username" class="block text-sm font-medium text-black-custom">
-                <span class="font-bold text-red-custom mr-2">*</span>Region</label>
-
-            <div class="flex items-center justify-between  w-full">
-                <select id="region"
+            <td class="px-6 py-4 whitespace-nowrap">
+                <select
+                    id="region"
                     name="region"
                     autocomplete="region"
-                    class="mt-1 block w-5/12 py-2 px-3 border border-own-lightgray bg-own-lightgray rounded-md shadow-sm focus:outline-none focus:ring-0 focus:border-own-lightgray sm:text-sm">
+                    class="mt-1 block w-full py-2 px-3 border border-own-lightgray bg-own-lightgray rounded-md shadow-sm focus:outline-none focus:ring-0 focus:border-own-lightgray sm:text-sm">
 
                     @if ($profile['region'] == 'EUNE')
                         <option value="EUNE">Europe Nordic & East</option>
@@ -81,28 +87,30 @@
                         <option value="OCE">Oceania</option>
                     @endif
                 </select>
+            </td>
 
+            <td>
+                <button type="submit">
+                    updatovat
+                </button>
+            </td>
 
-                    <button type="submit" class="mx-1 bg-blue-500 px-2 py-1 rounded">
-                        Potvrdit
-                    </button>
-
-            </div>
-
-        </div>
-
-        <form
-            action="{{ route('summoner-delete', $profile['id']) }}"
-            method="POST">
-            @method('DELETE')
-            @csrf
-
-            <button type="submit" class="mx-1 bg-red-custom px-2 py-1 rounded">
-                {{ $profile['id'] }}
-            </button>
         </form>
 
+        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
 
-    </div>
+            <form
+                action="{{ route('profile-delete', $profile['id']) }}"
+                method="POST">
 
-@endif
+                @method('DELETE')
+                @csrf
+
+                    <button type="submit" class=" ">
+                        smazat
+                    </button>
+            </form>
+        </td>
+
+    </tr>
+</tbody>
