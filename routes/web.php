@@ -34,6 +34,7 @@ Auth::routes();
     route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
     route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
 
+
 // Skins
     route::get('/skins', [SkinsController::class, 'index'])->name('skins');
     route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');

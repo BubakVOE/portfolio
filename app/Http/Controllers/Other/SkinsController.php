@@ -26,7 +26,6 @@ class SkinsController extends Controller
 
     public function show(Champion $champion)
     {
-
         $dataSkin = Http::get('https://ddragon.leagueoflegends.com/cdn/11.19.1/data/cs_CZ/champion/'.$champion->nickname.'.json')->collect()['data'][$champion->nickname]['skins'];
 
         // dd($skins);

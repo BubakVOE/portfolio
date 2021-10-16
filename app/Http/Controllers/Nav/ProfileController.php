@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\nav;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Summoner;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 
 class ProfileController extends Controller
@@ -17,8 +18,16 @@ class ProfileController extends Controller
 
         $user = Auth()->user();
 
+
+        $userId = Auth()->user()->id;
+
+        $profiles = Summoner::whereIn('summoner_id', [$userId])
+        ->get();
+
+
         return view('pages.profile.profile-index', [
             'user' => $user,
+            'profiles' => $profiles,
         ]);
     }
 

@@ -1,4 +1,4 @@
-<tbody class="bg-gray-400">
+<tbody class="bg-gray-500">
     <tr>
         <td class="px-6 py-4 whitespace-nowrap">
             <h1 class="text-sm font-medium text-gray-900">
@@ -89,15 +89,15 @@
                 </select>
             </td>
 
-            <td>
-                <button type="submit">
+            <td class="text-center">
+                <button class="bg-green-custom capitalize font-semibold px-2 py-1 rounded" type="submit">
                     updatovat
                 </button>
             </td>
 
         </form>
 
-        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+        <td class="text-center">
 
             <form
                 action="{{ route('profile-delete', $profile['id']) }}"
@@ -106,7 +106,7 @@
                 @method('DELETE')
                 @csrf
 
-                    <button type="submit" class=" ">
+                    <button class="bg-red-custom capitalize font-semibold px-2 py-1 rounded" type="submit" class=" ">
                         smazat
                     </button>
             </form>

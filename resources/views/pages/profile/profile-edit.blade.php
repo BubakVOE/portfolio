@@ -2,6 +2,48 @@
 
 @section('content')
 
+<nav class="">
+    <ol role="list" class="max-w-2xl py-4 border-b-2 border-gradient-red mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
+
+        <li class="flex items-center">
+            <a href="{{ route('domu') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+            </a>
+        </li>
+
+        <li>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-old" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </li>
+
+        <li>
+            <div class="flex items-center">
+                <a href="{{ route('profile-index', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                    {{ $user->username }}
+                </a>
+            </div>
+        </li>
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-old" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
+
+        <li>
+            <div class="flex items-center">
+                <a href="{{ route('profile-edit', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                    edit
+                </a>
+            </div>
+        </li>
+
+    </ol>
+</nav>
+
+
 @if(session()->has('message'))
     <div class="absolute left-1/2 transform -translate-x-1/2 top-24 translate-y-1 bg-green-custom px-3 py-2 rounded-md">
         <h1 class="text-xl text-black-custom">
@@ -12,48 +54,6 @@
 
 <div class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 sm:py-0 xl:py-5 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg">
-
-    {{-- navigace --}}
-        <nav class="mb-5 pb-4 border-b-2 border-own-black">
-            <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
-
-                <li>
-                    <div class="flex items-center">
-                        <a href="{{ route('domu') }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
-                            domů
-                        </a>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="flex items-center">
-                        <a href="{{ route('profile-index', $user->username) }}" class="mr-2 text-sm font-medium text-gray-600 capitalize">
-                            {{ $user->username }}
-                        </a>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-
-                    </div>
-                </li>
-
-                <li>
-                    <div class="flex items-center">
-                        <a href="" class="mr-2 text-sm font-medium text-gray-600 capitalize">
-                            Edit
-                        </a>
-                    </div>
-                </li>
-
-            </ol>
-        </nav>
-
         {{--účty league of legends --}}
             <div class="mt-10 sm:mt-0">
                 <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -68,7 +68,7 @@
 
                     <div class="mt-5 md:mt-0 md:col-span-2">
                         <div class="shadow overflow-hidden sm:rounded-md">
-                            <div class="px-4 py-5 bg-own-darkgray sm:p-6">
+                            <div class="px-4 py-5 bg-gray-old sm:p-6">
 
                                 <div class="grid grid-cols-6 gap-6">
 
@@ -96,25 +96,25 @@
                                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                             <div class="overflow-hidden">
                                                 <table class="min-w-full divide-y divide-black-custom b">
-                                                    <thead class="bg-gray-medium">
+                                                    <thead class="bg-own-darkgray">
                                                         <tr>
-                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                                 id
                                                             </th>
 
-                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                                 username
                                                             </th>
 
-                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                                 region
                                                             </th>
 
-                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                                 Updatovat
                                                             </th>
 
-                                                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                                                            <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-300 uppercase tracking-wider">
                                                                 smazat
                                                             </th>
                                                         </tr>
@@ -164,10 +164,10 @@
 
                     <div class="mt-5 md:mt-0 md:col-span-2">
                         <div class="shadow overflow-hidden sm:rounded-md">
-                            <div class="px-4 py-5 bg-own-darkgray sm:p-6">
+                            <div class="px-4 py-5 bg-gray-old sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="givenName" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Jméno</label>
+                                        <label for="givenName" class="block text-sm font-medium text-white"><span class="font-bold text-red-custom mr-2">*</span>Jméno</label>
                                         <input type="text"
                                                 name="givenName"
                                                 id="givenName"
@@ -177,7 +177,7 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="familyName" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span>Příjmení</label>
+                                        <label for="familyName" class="block text-sm font-medium text-white"><span class="font-bold text-red-custom mr-2">*</span>Příjmení</label>
                                         <input type="text"
                                                 name="familyName"
                                                 id="familyName"
@@ -187,7 +187,7 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="email" class="block text-sm font-medium text-black-custom"><span class="font-bold text-red-custom mr-2">*</span> Email address</label>
+                                        <label for="email" class="block text-sm font-medium text-white"><span class="font-bold text-red-custom mr-2">*</span> Email address</label>
                                         <input type="text"
                                                 name="email"
                                                 id="email"
@@ -198,7 +198,7 @@
 
                                     <div class="col-span-6 sm:col-span-2">
                                         <label  for="region"
-                                                class="block text-sm font-medium text-black-custom"> Stát </label>
+                                                class="block text-sm font-medium text-white"> Stát </label>
 
                                         <select id="state"
                                                 name="state"
@@ -214,7 +214,7 @@
                                     </div>
 
                                     <div class="col-span-6 w-8/12 mx-auto ">
-                                        <label for="street-address" class="block text-sm font-medium text-black-custom ">Street address</label>
+                                        <label for="street-address" class="block text-sm font-medium text-white ">Street address</label>
                                         <input type="text"
                                                 name="street-address"
                                                 id="street-address"
@@ -223,7 +223,7 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                                        <label for="city" class="block text-sm font-medium text-black-custom">City</label>
+                                        <label for="city" class="block text-sm font-medium text-white">City</label>
                                         <input type="text"
                                                 name="city"
                                                 id="city"
@@ -231,7 +231,7 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                                        <label for="state" class="block text-sm font-medium text-black-custom">State / Province</label>
+                                        <label for="state" class="block text-sm font-medium text-white">State / Province</label>
                                         <input type="text"
                                                 name="state"
                                                 id="state"
@@ -247,7 +247,7 @@
 
                                     <div class="px-4 py-5 bg-own-darkgray  space-y-6 sm:p-6">
                                         <div>
-                                            <label class="block text-sm font-medium text-black-custom">
+                                            <label class="block text-sm font-medium text-white">
                                                 Photo
                                             </label>
 
@@ -257,7 +257,7 @@
                                                     <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
                                                 </svg>
                                                 </span>
-                                                <button type="button" class="ml-5 bg-white py-2 px-3 border border-own-lightgray rounded-md shadow-sm text-sm leading-4 font-medium text-black-custom hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                <button type="button" class="ml-5 bg-black-custom py-2 px-3 border border-own-lightgray rounded-md shadow-sm text-sm leading-4 font-medium text-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                                 Change
                                                 </button>
                                             </div>
