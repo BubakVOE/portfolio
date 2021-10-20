@@ -23,7 +23,7 @@
                     <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
                         <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
 
-                            <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                            <div class="hidden md:block cursor-default md:ml-10 md:pr-4 md:space-x-8">
                                 <a class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
                                     Yone
                                 </a>

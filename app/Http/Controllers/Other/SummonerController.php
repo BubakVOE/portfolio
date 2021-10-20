@@ -27,15 +27,40 @@ class SummonerController extends Controller
     public function show($username)
     {
         $summoner = app('league-api')->getSummonerByName($username);
-            $championMastery = app('league-api')->getChampionMasteries($summoner->id);
+
+        $championMastery = app('league-api')->getChampionMasteries($summoner->id);
+
+        $puuid = $summoner->puuid;
+
+        $matchIds = Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/'.$puuid.'/ids?start=0&count=20&api_key='.env('RIOT_API_KEY').'')
+                ->collect();
 
 
-        $test = Http::get('https://eun1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/KqkRkbhbaFRwA07rpzEFA1PpKsao8G5Fq0-CkBGquz3irwk?api_key='.env('RIOT_APP').'')->collect();
-        dd($test);
+        $matchHistories = [];
+
+
+        foreach ($matchIds as $matchId) {
+            $matchHistories[] = Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/'.$matchId.'?api_key='.env('RIOT_API_KEY').'')
+                                ->collect();
+        };
+
+
+
+
 
         return view('pages.summoner.show', [
             'summoner' => $summoner,
-            'championMastery' => $championMastery
+            'championMastery' => $championMastery,
+            'matchHistories' => $matchHistories,
+        ]);
+    }
+
+
+    public function matchHistory($username, $matchHistory)
+    {
+        return view('pages.summoner.matchHistory', [
+            'username' => $username,
+            'matchHistory' => $matchHistory,
         ]);
     }
 

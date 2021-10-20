@@ -25,5 +25,15 @@
 </div>
 
 
+
+<div>
+    @foreach ($matchHistories as $matchHistory )
+        <x-summoner.summoner-match-history :matchHistory='$matchHistory'/>
+    @endforeach
+</div>
+
+
+
+
 @endsection
 

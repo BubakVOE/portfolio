@@ -51,6 +51,7 @@ Auth::routes();
 // Summoner lolko
     route::get('/summoner', [SummonerController::class, 'index'])->name('summoner');
     route::get('/summoner/{username}', [SummonerController::class, 'show'])->name('summoner-show');
+    route::get('/summoner/{username}/{matchHistory}', [SummonerController::class, 'matchHistory'])->name('summoner-matchHistory');
 
     // route::put('/summoner/{id}/update', [SummonerController::class, 'update'])->name('summoner-update');
 

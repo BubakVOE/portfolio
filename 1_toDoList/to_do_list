@@ -1,18 +1,3 @@
-
-
-/champion/{id}
-    -smazat id a nahradit champion nickname
-
-
-
-
-
-
-user
-    -přidat street address, city, state, !! avatar !!
-    -Avatar -> basic z githubu
-            -> možnost editace
-
 accounts
     -vytvořit nový model, který bude odkazovat na daného Usera
     -accounts->belongsTo(User)
@@ -29,5 +14,15 @@ accounts
         -euw  Raffy, Filip
         +základní statistiky divize, profileIcon, LP, w/l
 
+--------------------------------------------------------------------------------------------
 
-asdaassdadad
+/champion/{id}
+    -smazat id a nahradit champion nickname
+
+user
+    -přidat street address, city, state, !! avatar !!
+    -Avatar -> basic z githubu
+            -> možnost editace
+
+
+

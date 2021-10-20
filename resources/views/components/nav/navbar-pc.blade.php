@@ -32,9 +32,9 @@
                     </svg>
                 </button>
 
-                <div id="champLinks" class="hidden absolute z-40 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 ">
-                    <div class="rounded-lg shadow-lg overflow-hidden ">
-                        <div class="relative grid gap-6 bg-own-lightgray px-5 py-6 sm:gap-8 sm:p-8">
+                <div id="champLinks" class="hidden  bg-own-lightgray rounded-md absolute z-40 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 ">
+                    <div class="  overflow-hidden ">
+                        <div class="relative grid gap-6  px-5 py-6 sm:gap-8 sm:p-8">
                             <a href="{{ route('champions') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
                                 <!-- Heroicon name: outline/chart-bar -->
                                 <svg class="flex-shrink-0 h-6 w-6 text-own-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -110,7 +110,7 @@
 
                         </div>
 
-                        <div class="px-5 py-5 bg-own-darkgray space-y-6 sm:flex justify-center sm:space-y-0 sm:space-x-10 sm:px-8">
+                        <div class="px-5 py-5 bg-own-darkgray rounded-b-md space-y-6 sm:flex justify-center sm:space-y-0 sm:space-x-10 sm:px-8">
                             <div class="flow-root">
                                 <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
                                 <!-- Heroicon name: outline/play -->
@@ -314,7 +314,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                         </svg>
 
-                                        <span class="ml-3">Odhlásit se</span>
+                                        <span class="ml-3 text-gray-400">Odhlásit se</span>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                             {{ csrf_field() }}
@@ -328,7 +328,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
-                                        <span class="ml-3">Nastavení</span>
+                                        <span class="ml-3 text-gray-400">Nastavení</span>
                                     </a>
                                 </div>
 
