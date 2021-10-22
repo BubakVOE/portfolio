@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <nav class="">
         <ol role="list" class="max-w-2xl py-4 border-b-2 border-gradient-red mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
 
