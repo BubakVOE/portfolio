@@ -1,15 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
 <a href="/summoner/{{ Auth()->user()->username }}/{{ $matchHistory['metadata']['matchId'] }}"
     class=""
     >

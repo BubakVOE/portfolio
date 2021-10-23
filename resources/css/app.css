@@ -5,6 +5,11 @@
 @import "tailwindcss/utilities";
 
 .active {
+    border-bottom: solid 2px #B9B9B9;
+    color: #FF2A2A;
+}
+
+.dotActive {
     background-color: #B9B9B9;
     color: black;
 }

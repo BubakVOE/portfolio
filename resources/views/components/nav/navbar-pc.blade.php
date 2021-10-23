@@ -8,7 +8,7 @@
         </div>
 
         <div class="-mr-2 -my-2 md:hidden">
-            <button type="button" onclick="hamburgerToggle()" class=" border-2 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+            <button type="button" onclick="hamburgerToggle()" class="  border-2 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                 <span class="sr-only">Open menu</span>
                 <!-- Heroicon name: outline/menu -->
                 <svg class="h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -19,12 +19,14 @@
 
         <nav class="hidden md:flex space-x-10">
 
-            <a href="{{ route('domu') }}" class="text-lg font-medium text-own-orange font-Rubik hover:text-own-red">
-                Domů
-            </a>
+            <div class="relative {{ active('/') }} border-b-2 border-own-black hover:border-own-red ">
+                <a href="{{ route('domu') }}" class="font-bold text-xl text-own-orange font-Rubik hover:text-own-red ">
+                    Domů
+                </a>
+            </div>
 
-            <div class="relative">
-                <button type="button" onclick="champToggle()" class="text-lg font-medium text-own-orange font-Rubik group rounded-md inline-flex items-center hover:text-own-red focus:outline-none " aria-expanded="false">
+            <div class="relative {{ active(['champions', 'champions/*', 'champion/*', 'skins', 'skins/*']) }} border-b-2 border-own-black hover:border-own-red ">
+                <button type="button" onclick="champToggle()" class="font-bold text-xl text-own-orange font-Rubik pb-1 hover:text-own-red group rounded-md inline-flex items-center focus:outline-none " aria-expanded="false">
                     <span>Postavy</span>
 
                     <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -137,9 +139,9 @@
 
             </div>
 
-            <div class="relative">
+            <div class="relative {{ active('champions') }} border-b-2 border-own-black hover:border-own-red ">
                 <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                <button type="button" onclick="vipToggle()" class="text-own-orange text-lg  group rounded-md inline-flex items-center font-medium hover:text-own-red focus:outline-none " aria-expanded="false">
+                <button type="button" onclick="vipToggle()" class="font-bold text-xl text-own-orange font-Rubik pb-1 hover:text-own-red group rounded-md inline-flex items-center focus:outline-none " aria-expanded="false">
                     <span>VIP</span>
 
                     <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

@@ -21,26 +21,26 @@
                     <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
                         <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
 
-                            <div class="hidden md:block cursor-default md:ml-10 md:pr-4 md:space-x-8">
-                                <a class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
+                            <div class="hidden  md:flex cursor-default md:ml-10 md:pr-4 md:space-x-8">
+                                <h1 class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
                                     Yone
-                                </a>
+                                </h1>
 
-                                <a class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
+                                <h1 class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
                                     Yasuo
-                                </a>
+                                </h1>
 
-                                <a class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
+                                <h1 class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
                                     Master YI
-                                </a>
+                                </h1>
 
-                                <a class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
+                                <h1 class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
                                     Sivir
-                                </a>
+                                </h1>
 
-                                <a class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
+                                <h1 class="dot font-medium text-gray-500 hover:text-gray-900 px-3 py-2 rounded-lg">
                                     Veigar
-                                </a>
+                                </h1>
                             </div>
                         </nav>
                     </div>
@@ -135,21 +135,21 @@
 
     <div class="relative min-h-full">
         <div class="overflow-hidden absolute w-full">
-            <img class="rounded-xl" src="{{ asset('img/background/poro-bg4.png') }}">
+            <img class="rounded-xl" src="{{ asset('img/background/poro-bg5.png') }}">
         </div>
 
         <div class="z-10 relative h-80 grid mx-auto grid-cols-3 place-items-center">
 
-            <div class="relative bg-red-custom bg-opacity-10 rounded-xl top-52 backdrop-filter backdrop-blur-2xl ">
-                <a class="flex items-center justify-center flex-col px-10 py-5 " href="{{ route('champions') }}">
-                    <svg class="flex-shrink-0 h-20 w-20 text-own-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <div class="relative bg-red-custom bg-opacity-10 rounded-xl top-52 backdrop-filter backdrop-blur-2xl hover:bg-opacity-20 group ">
+                <a class="flex items-center justify-center flex-col px-10 py-5  " href="{{ route('skins') }}">
+                    <svg class="flex-shrink-0 h-20 w-20 text-own-orange group-hover:text-own-red" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                     </svg>
                     <h1 class="text-black-custom font-poppins font-bold">Postavy</h1>
                 </a>
             </div>
 
-            <div class="relative bg-red-custom bg-opacity-10 rounded-xl top-52 backdrop-filter backdrop-blur-2xl ">
+            <div class="relative bg-red-custom bg-opacity-10 rounded-xl top-52 backdrop-filter backdrop-blur-2xl hover:bg-opacity-20 ">
                 <a class="flex items-center justify-center flex-col px-10 py-5 " href="{{ route('skins') }}">
                     <svg class="flex-shrink-0 h-20 w-20 text-own-orange" xmlns="http://www.w3.org/2000/svg"   fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -158,7 +158,7 @@
                 </a>
             </div>
 
-            <div class="relative bg-red-custom bg-opacity-10 rounded-xl top-52 backdrop-filter backdrop-blur-2xl ">
+            <div class="relative bg-red-custom bg-opacity-10 rounded-xl top-52 backdrop-filter backdrop-blur-2xl hover:bg-opacity-20 ">
                 @auth
                     <a class="flex items-center justify-center flex-col px-10 py-5 " href="{{ route('profile-index',Auth()->user()->username) }}">
                         <svg class="flex-shrink-0 h-20 w-20 text-own-orange"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
