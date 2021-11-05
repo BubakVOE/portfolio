@@ -22,7 +22,6 @@
                             </h2>
                             <p class="mt-2 text-center text-sm text-gray-800">
                                 zcela zdarma bez poplatků
-
                             </p>
                         </div>
 
