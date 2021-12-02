@@ -1,5 +1,5 @@
 <div>
-    <a href="{{ route('champions-show', $champion->id) }}">
+    <a href="{{ route('champions-show', $champion->name) }}">
 
 {{--    champion-card   --}}
         <div class="w-60 h-72 bg-own-black border-2 border-black-custom hover:bg-own-darkgray">

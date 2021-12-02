@@ -5,7 +5,7 @@
 @import "tailwindcss/utilities";
 
 .active {
-    border-bottom: solid 2px #B9B9B9;
+    border-bottom: solid 2px #FF2A2A;
     color: #FF2A2A;
 }
 

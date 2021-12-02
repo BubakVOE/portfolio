@@ -36,7 +36,7 @@
 
         <li>
             <div class="flex items-center">
-                <a href="{{ route('champions-show',$champion->id) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                <a href="{{ route('champions-show', $champion->name) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
                     {{ $champion->name }}
                 </a>
             </div>
@@ -102,7 +102,7 @@
                             <fieldset class="mt-4 pl-4">
                                 <div class="flex flex-col ">
 
-                                    <div class="relative cursor-pointer focus:outline-none">
+                                    <div class="relative focus:outline-none">
                                         @foreach ($champData['tags'] as $tag)
                                             <h1 class="">
                                                 {{ $tag }}

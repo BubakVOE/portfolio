@@ -30,7 +30,7 @@ Auth::routes();
 
 // Champions
     route::get('/champions', [ChampionsController::class, 'index'])->name('champions');
-    route::get('/champion/{champion}', [ChampionsController::class, 'show'])->name('champions-show');
+    route::get('/champion/{id}', [ChampionsController::class, 'show'])->name('champions-show');
     route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
     route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
 

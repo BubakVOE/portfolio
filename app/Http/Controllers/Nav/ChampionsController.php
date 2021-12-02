@@ -30,26 +30,31 @@ class ChampionsController extends Controller
     }
 
 
-    public function show(Champion $champion)
+    public function show(Champion $champion, $name)
     {
-        $champData = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$champion->nickname.'.json')->collect()['data'][$champion->nickname];
+
+        $champion = Champion::where('name', $name)->get()[0];
+        // dd($champion);
+
+        $champData = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$champion->name.'.json')->collect()['data'][$name];
 
             $skinsDatas = $champData['skins'];
 
-        $test = Http::get('ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][0]['id'].'.jpg')->collect();
-        
-        $skinsNum = [];
+            $skinsNum = [];
 
-        foreach ($skinsDatas as $skinsData) {
-            $skinsNum [] = $skinsData['num'];
-        }
+            foreach ($skinsDatas as $skinsData) {
+                $skinsNum [] = $skinsData['num'];
+            }
+
+        // $test = Http::get('ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][0]['id'].'.jpg')->collect();
+
+
 
 
         return view('pages/champions/champion', [
             'champion' => $champion,
             'champData' => $champData,
             'skinsNum' => $skinsNum,
-            'test' => $test
         ]);
 
     }

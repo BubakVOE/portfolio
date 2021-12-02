@@ -69,6 +69,39 @@
             x.style.display = "block";
         }
     }
+
+
+    function mobileToggle() {
+        var x = document.getElementById("mobileToggles");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            x.style.backgroundColor = "lightblue";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+
+    function colorToggle() {
+        var x = document.getElementById("colorToggles");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+
+    function houseToggle() {
+        var x = document.getElementById("houseToggles");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+
 </script>
 
 </html>

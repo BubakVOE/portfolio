@@ -38,7 +38,6 @@
 
     <div class="grid grid-cols-1 place-items-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg px-4 py-24 md:px-16 md:py-16">
 
-
             @foreach ($saveNicknames as $saveNickname)
                 <x-champions.skin-card :skin='$saveNickname'/>
             @endforeach
