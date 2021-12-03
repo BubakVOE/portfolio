@@ -21,7 +21,7 @@
     <x-nav.navbar-pc/>
 </div>
 
-    <div class="m-auto bg-own-lightgray">
+    <div class=" bg-white relative">
         @yield('content')
     </div>
 
