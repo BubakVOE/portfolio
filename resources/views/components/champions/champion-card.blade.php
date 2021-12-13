@@ -8,7 +8,6 @@
         {{-- img + name,title --}}
                 <div class=" h-full">
                 {{-- img --}}
-
                     <div class="text-center ">
                         <h1 class="text-xl font-bold text-black font-apple text-own-red">{{ $champion->name }}</h1>
                     </div>
