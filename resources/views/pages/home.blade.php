@@ -139,7 +139,7 @@
         <div class="py-12 bg-own-darkgray relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:text-center">
-                    <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl uppercase font-poppins text-gradient-red">
+                    <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl uppercase font-poppins  text-transparent bg-clip-text bg-gradient-to-r from-gradient-red to-own-orange pt-2">
                         Proč u nás ?</h2>
 
                     <p class="mt-4 max-w-2xl text-lg text-gray-200 lg:mx-auto">
@@ -224,19 +224,19 @@
 
             <div class="bg-white overflow-hidden my-28 mx-20">
 
-                <div class="w-11/12 mx-auto bg-own-darkgray p-10">
-                    <div class="grid grid-cols-5 place-items-center gap-x-5">
+                <div class="w-11/12 mx-auto bg-own-darkgray rounded-lg p-10">
+                    <div class="grid grid-cols-5 place-items-center gap-x-5 ">
 
                         @foreach ($summoners_data as $summoner_data)
-                            <div class="bg-gray-medium  w-full  pt-3 px-3 flex flex-col items-center">
+                            <div class="bg-own-darkgray border-t border-l border-r rounded-t-xl border-gray-medium  w-full  pt-3 px-3 flex flex-col items-center">
                                 <img class="rounded-xl w-20 " src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/profileicon/'.$summoner_data->profileIconId.'.png' }}" >
                                 <hr class="mt-3 border border-own-darkgray w-10/12 mx-auto ">
                             </div>
                         @endforeach
 
                         @foreach ($chall_summoners_other as $chall_summoner_other)
-                            <a class="w-full bg-gray-medium  pt-3 space-y-3 pb-3 flex flex-col items-center justify-center " href="{{ route('summoner-show', $chall_summoner_other['summonerName']) }}">
-                                <h1 class="t text-xl font-montserrat text-white font-extrabold">{{ $chall_summoner_other['summonerName'] }}</h1>
+                            <a class="w-full bg-own-darkgray border-b border-l rounded-b-xl border-r border-gray-medium   pt-3 space-y-3 pb-3 flex flex-col items-center justify-center " href="{{ route('summoner-show', $chall_summoner_other['summonerName']) }}">
+                                <h1 class="text-xl font-montserrat text-white font-extrabold">{{ $chall_summoner_other['summonerName'] }}</h1>
 
                                 <div class="bg-own-darkgray p-1 shadow-inner shadow-">
                                     <img class="h-28 w-28" src="{{ asset('img/summoner/emblems/Emblem_'.$chall_summoner_other['tier'].'.png') }}">

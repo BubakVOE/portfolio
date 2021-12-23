@@ -33,11 +33,13 @@ class SummonerController extends Controller
     {
         $summoner = app('league-api')->getSummonerByName($username);
 
+
             $championMastery = app('league-api')->getChampionMasteries($summoner->id);
 
         // soloq/duoq | flexky
             $summonerData = Http::get('https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/'.$summoner->id.'?api_key='.env('RIOT_API_KEY').'')
                                 ->collect();
+
 
         //EUN1_2946376800, EUN1_2946376000, ....
         // aktuálně je historie 5 zápasů, pro zvětšení změnít => count na větší
