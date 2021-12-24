@@ -21,7 +21,7 @@
 
         <li>
             <div class="flex items-center">
-                <a href="{{ route('profile-index', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                <a href="{{ route('account-index', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
                     {{ $user->username }}
                 </a>
             </div>
@@ -34,7 +34,7 @@
 
         <li>
             <div class="flex items-center">
-                <a href="{{ route('profile-edit', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                <a href="{{ route('account-edit', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
                     edit
                 </a>
             </div>
@@ -70,28 +70,7 @@
                         <div class="shadow overflow-hidden sm:rounded-md">
                             <div class="px-4 py-5 bg-gray-old sm:p-6">
 
-                                <div class="grid grid-cols-6 gap-6">
-
-                                    <div class="col-span-6 sm:col-span-12 flex justify-center ">
-
-                                        <button id="modalBtn" class=" rounded-md w-full">
-                                            <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-green-custom border-dashed rounded-md ">
-                                                <div class="space-y-2 text-center flex flex-col items-center justify-center">
-                                                    <svg class="mx-auto h-12 w-12 text-green-custom" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
-                                                    </svg>
-
-                                                </div>
-                                            </div>
-                                        </button>
-
-                                    </div>
-
-                                    <x-profile.profile-add/>
-
-                                </div>
-
-                                <div class="flex flex-col mt-10 mb-0">
+                                <div class="flex flex-col mb-5">
                                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                             <div class="overflow-hidden">
@@ -130,6 +109,29 @@
                                     </div>
                                 </div>
 
+                                <div class="grid grid-cols-6 gap-6">
+
+                                    <div class="col-span-6 sm:col-span-12 flex justify-center ">
+
+                                        <button id="modalBtn" class=" rounded-md w-full">
+                                            <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-green-custom border-dashed rounded-md ">
+                                                <div class="space-y-2 text-center flex flex-col items-center justify-center">
+                                                    <svg class="mx-auto h-12 w-12 text-green-custom" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+                                                    </svg>
+
+                                                </div>
+                                            </div>
+                                        </button>
+
+                                    </div>
+
+                                    <x-profile.profile-add/>
+
+                                </div>
+
+
+
                             </div>
 
                         </div>
@@ -164,6 +166,7 @@
 
                     <div class="mt-5 md:mt-0 md:col-span-2">
                         <div class="shadow overflow-hidden sm:rounded-md">
+
                             <div class="px-4 py-5 bg-gray-old sm:p-6">
                                 <div class="grid grid-cols-6 gap-6">
                                     <div class="col-span-6 sm:col-span-3">
@@ -173,7 +176,7 @@
                                                 id="givenName"
                                                 value="{{ $user->givenName }}"
                                                 autocomplete="givenName"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                                class="mt-1 focus:ring-0 px-3 py-2 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
@@ -183,7 +186,7 @@
                                                 id="familyName"
                                                 value="{{ $user->familyName }}"
                                                 autocomplete="familyName"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                                class="mt-1 focus:ring-0 px-3 py-2 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
@@ -193,7 +196,7 @@
                                                 id="email"
                                                 value="{{ $user->email }}"
                                                 autocomplete="email"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                                class="mt-1 focus:ring-0 px-3 py-2 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-2">
@@ -219,7 +222,7 @@
                                                 name="street-address"
                                                 id="street-address"
                                                 autocomplete="street-address"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray w-full block shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                                class="mt-1 focus:ring-0 px-3 py-2 focus:border-own-lightgray w-full block shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -227,7 +230,7 @@
                                         <input type="text"
                                                 name="city"
                                                 id="city"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                                class="mt-1 focus:ring-0 px-3 py-2 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3 lg:col-span-3">
@@ -235,10 +238,8 @@
                                         <input type="text"
                                                 name="state"
                                                 id="state"
-                                                class="mt-1 focus:ring-0 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
+                                                class="mt-1 focus:ring-0 px-3 py-2 focus:border-own-lightgray block w-full shadow-sm sm:text-sm border-own-lightgray bg-own-lightgray rounded-md">
                                     </div>
-
-
                                 </div>
                             </div>
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\nav;
+namespace App\Http\Controllers\Riot;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class VipController extends Controller
+class ItemsController extends Controller
 {
     //
 }

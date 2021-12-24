@@ -1,8 +1,6 @@
-@import "tailwindcss/base";
-
-@import "tailwindcss/components";
-
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .active {
     border-bottom: solid 2px #FF2A2A;
@@ -18,12 +16,10 @@
     background: #f1f1f1;
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888;
   }
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }

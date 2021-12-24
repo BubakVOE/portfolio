@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\other;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ItemsController extends Controller
+class VipController extends Controller
 {
     //
 }

@@ -28,13 +28,13 @@
                         <div>
                             <div class="md:flex md:justify-between">
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
                                         Jméno
                                     </span>
                                     <input  id="givenName"
                                             type="text"
                                             name="givenName"
-                                            class="@error('givenName') @enderror h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
+                                            class="@error('givenName') @enderror h-12 px-2 w-full rounded border border-black-custom outline-none "
                                             required
                                             autocomplete="given-name"
                                             placeholder="Pavel"
@@ -42,12 +42,12 @@
                                 </div>
 
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
                                         Příjmení
                                     </span>
                                     <input  type="text"
                                             name="familyName"
-                                            class="@error('familyName') @enderror h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
+                                            class="@error('familyName') @enderror h-12 px-2 w-full rounded border border-black-custom outline-none"
                                             required
                                             autocomplete="family-name"
                                             placeholder="Novák"
@@ -55,44 +55,13 @@
                                 </div>
                             </div>
 
-                            <div class="md:flex md:justify-between ">
-                                <div class="mt-14 md:mt-16 relative md:w-7/12 mx-auto">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
-                                        Přezdívka
-                                    </span>
-                                    <input  type="text"
-                                            name="username"
-                                            class="@error('username') @enderror h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
-                                            required
-                                            placeholder="BubakVOE"
-                                            >
-                                </div>
-{{--
-                                <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
-                                        Server
-                                    </span>
-                                    <select name="region"
-                                            class="h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
-                                    >
-                                        <option value="EUNE">Europe Nordic & East</option>
-                                        <option value="NA">North America</option>
-                                        <option value="EW">Europe West</option>
-                                        <option value="LAS">Las</option>
-                                        <option value="LAC">Lan</option>
-                                        <option value="OCE">Oceania</option>
-                                    </select>
-
-                                </div> --}}
-                            </div>
-
                             <div class="mt-14 md:mt-16 relative md:w-7/12 md:mx-auto">
-                                <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
+                                <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
                                     Email
                                 </span>
                                 <input  type="text"
                                         name="email"
-                                        class="@error('email') @enderror h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
+                                        class="@error('email') @enderror h-12 px-2 w-full rounded border border-black-custom outline-none"
                                         required
                                         autocomplete="username"
                                         placeholder="pavelnovak@seznam.cz"
@@ -106,14 +75,15 @@
 
                             <div class="md:flex md:justify-between">
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
                                         Heslo
                                     </span>
                                     <input  type="password"
                                             name="password"
-                                            class="@error('password') @enderror h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
+                                            class="@error('password') @enderror h-12 px-2 w-full rounded border border-black-custom outline-none"
                                             required
                                             autocomplete="password"
+                                            placeholder="************"
                                             >
                                     @error('password')
                                         <p class="text-red-500 text-xs italic mt-4">
@@ -123,21 +93,54 @@
                                 </div>
 
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-own-black text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
                                         Potvrdit heslo
                                     </span>
-                                    <input  type="password"
+                                    <input  type="text"
                                             name="password_confirmation"
-                                            class="h-12 px-2 w-full border-2 border-own-black rounded focus:ring-own-red focus:outline-none focus:border-own-red focus:bg-red-100 placeholder-gray-300"
+                                            class="h-12 px-2 w-full rounded border border-black-custom outline-none"
                                             required
                                             autocomplete="password"
+                                            placeholder="**********"
                                             >
                                 </div>
                             </div>
+
+
+                            <div class="md:flex md:justify-between">
+                                <div class="mt-14 md:mt-16 relative md:w-5/12">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                        Server
+                                    </span>
+                                    <select name="region"
+                                            class="h-12 px-2 w-full rounded border border-black-custom outline-none"
+                                    >
+                                        <option value="EUNE">Europe Nordic & East</option>
+                                        <option value="NA">North America</option>
+                                        <option value="EW">Europe West</option>
+                                        <option value="LAS">Las</option>
+                                        <option value="LAC">Lan</option>
+                                        <option value="OCE">Oceania</option>
+                                    </select>
+                                </div>
+
+                                <div class="mt-14 md:mt-16 relative md:w-5/12">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                            In-game Nickname
+                                    </span>
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        class="@error('username') @enderror h-12 px-2 w-full rounded border border-black-custom outline-none"
+                                        placeholder="BubakVOE">
+                                </div>
+                            </div>
+
+
                         </div>
 
                             <div class="mt-14 md:mt-20 w-full md:w-5/12 md:mx-auto">
-                                <button type="submit" class="h-12 w-full bg-own-black text-white rounded hover:bg-own-red">
+                                <button type="submit" class="h-12 w-full bg-black-lighter text-white rounded hover:bg-black-custom">
                                     Zaregistrovat se
                                     <i class="fa fa-long-arrow-right"></i>
                                 </button>

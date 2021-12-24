@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <nav class="">
         <ol role="list" class="max-w-2xl py-4 border-b-2 border-gradient-red mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
 
@@ -24,7 +23,7 @@
 
             <li>
                 <div class="flex items-center">
-                    <a href="{{ route('profile-index', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                    <a href="{{ route('account-index', $user->username) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
                         {{ $user->username }}
                     </a>
                 </div>

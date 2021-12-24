@@ -30,7 +30,7 @@ class User extends Authenticatable
         'familyName',
         'isAdmin',
         'username',
-        // 'region',
+        'region',
         'email',
         'password',
     ];

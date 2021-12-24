@@ -16,7 +16,8 @@
 </head>
 <body>
 
-<div class="relative bg-own-black">
+<div class="relative bg-black-lighter">
+
     <x-nav.navbar-mobile/>
     <x-nav.navbar-pc/>
 </div>

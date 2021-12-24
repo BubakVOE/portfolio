@@ -34,7 +34,7 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
-    opacity.style.display = "block";
+    opacity.style.display = "flex";
 }
 
 // When the user clicks on <span> (x), close the modal

@@ -3,14 +3,22 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Nav\HomeController;
-use App\Http\Controllers\Nav\NewsController;
+
+//web
+use App\Http\Controllers\Web\UpdateController;
+use App\Http\Controllers\Web\HomeController;
+
+//admin
+
+//user
+use App\Http\Controllers\User\AccountController;
+use App\Http\Controllers\User\SummonerController;
 
 
-use App\Http\Controllers\nav\ProfileController;
-use App\Http\Controllers\other\SkinsController;
-use App\Http\Controllers\Nav\ChampionsController;
-use App\Http\Controllers\other\SummonerController;
+//riot
+use App\Http\Controllers\Riot\ChampionsController;
+use App\Http\Controllers\Riot\SkinsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,11 +48,11 @@ Auth::routes();
     route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');
 
 // Profile data
-    route::get('/profile/{username}', [ProfileController::class, 'index'])->name('profile-index');
-    route::get('/profile/{username}/edit', [ProfileController::class, 'edit'])->name('profile-edit');
-    route::post('/profile/store', [ProfileController::class, 'store'])->name('profile-store');
-    route::put('/profile/{id}/update', [ProfileController::class, 'update'])->name('profile-update');
-    route::delete('/profile/{id}/delete', [ProfileController::class, 'delete'])->name('profile-delete');
+    route::get('/account/{username}', [AccountController::class, 'index'])->name('account-index');
+    route::get('/account/{username}/edit', [AccountController::class, 'edit'])->name('account-edit');
+    route::post('/account/store', [AccountController::class, 'store'])->name('account-store');
+    route::put('/account/{id}/update', [AccountController::class, 'update'])->name('account-update');
+    route::delete('/account/{id}/delete', [AccountController::class, 'delete'])->name('account-delete');
 
 
 
@@ -58,9 +66,9 @@ Auth::routes();
 
 
 // patch notes
-    route::get('/news', [NewsController::class,'index'])->name('news');
-    Route::get('/news/lolko', [NewsController::class, 'lolko'])->name('newsLolko');
-    Route::get('/news/web', [NewsController::class, 'web'])->name('newsWeb');
+    route::get('/news', [UpdateController::class,'index'])->name('news');
+    Route::get('/news/lolko', [UpdateController::class, 'lolko'])->name('newsLolko');
+    Route::get('/news/web', [UpdateController::class, 'web'])->name('newsWeb');
 
 
 

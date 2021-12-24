@@ -996,7 +996,7 @@ module.exports = function transformData(data, headers, fns) {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 
 
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
@@ -2098,7 +2098,7 @@ var btn = document.getElementById("myBtn"); // Get the <span> element that close
 var span = document.getElementsByClassName("close")[0]; // When the user clicks the button, open the modal
 
 btn.onclick = function () {
-  opacity.style.display = "block";
+  opacity.style.display = "flex";
 }; // When the user clicks on <span> (x), close the modal
 
 

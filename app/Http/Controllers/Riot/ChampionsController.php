@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\nav;
+namespace App\Http\Controllers\Riot;
 
 use App\Models\Champion;
 use Illuminate\Http\Request;
@@ -8,8 +8,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Blood72\Riot\Facades\DataDragonAPI;
 use RiotAPI\LeagueAPI\LeagueAPI;
-
-
 
 class ChampionsController extends Controller
 {

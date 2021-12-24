@@ -13,9 +13,9 @@
                         Přihlaš se do svého účtu
                     </h2>
 
-                    <p class="mt-2 text-center text-sm text-gray-700 font-bold">
+                    <p class="mt-2 text-center text-sm text-black-lighter font-normal">
                         nebo
-                        <a href="{{ route('register') }}" class="font-medium text-own-black underline">
+                        <a href="{{ route('register') }}" class="text-own-black underline font-bold">
                         se zdarma zaregistruj !
                         </a>
                     </p>
@@ -36,7 +36,7 @@
                                     type="email"
                                     autocomplete="email"
                                     required
-                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-own-black placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-black-custom focus:border-black-custom focus:z-10 sm:text-sm"
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-black-lighter placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-black-custom focus:border-black-custom focus:z-10 sm:text-sm"
                                     placeholder="Emailová adresa">
                         </div>
 
@@ -47,7 +47,7 @@
                                     type="password"
                                     autocomplete="current-password"
                                     required
-                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-own-black placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-black-custom focus:border-black-custom focus:z-10 sm:text-sm"
+                                    class="appearance-none rounded-none relative block w-full px-3 py-2 border border-black-lighter placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-black-custom focus:border-black-custom focus:z-10 sm:text-sm"
                                     placeholder="Heslo">
                         </div>
 
@@ -56,7 +56,7 @@
                     <div class="flex flex-col md:flex-row items-center justify-between">
 
                         <div class="flex items-center">
-                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-own-black ring-0 focus:ring-0  rounded">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-black-lighter ring-0 focus:ring-0  rounded">
                             <label for="remember-me" class="ml-2 block text-sm text-gray-900">
                                 Pamatovat si mě
                             </label>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="pt-20">
-                        <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-own-black hover:bg-black-custom focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black-lighter hover:bg-black-custom focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                 <!-- Heroicon name: solid/lock-closed -->
                                 <svg class="h-5 w-5 text-own-orange group-hover:text-own-red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -85,5 +85,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

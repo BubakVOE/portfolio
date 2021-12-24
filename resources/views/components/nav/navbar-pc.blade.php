@@ -34,7 +34,7 @@
                     </svg>
                 </button>
 
-                <div id="champLinks" class="hidden  bg-own-lightgray rounded-md absolute z-40 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 ">
+                <div id="champLinks" class="hidden border border-own-orange shadow-lg bg-own-lightgray bg-opacity-40 backdrop-filter backdrop-blur-xl rounded-md absolute z-40 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2 ">
                     <div class="  overflow-hidden ">
                         <div class="relative grid gap-6  px-5 py-6 sm:gap-8 sm:p-8">
                             <a href="{{ route('champions') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
@@ -44,10 +44,10 @@
                                 </svg>
 
                                 <div class="ml-4">
-                                    <p class="text-base font-medium text-gray-900">
+                                    <p class="text-base font-medium text-black-custom">
                                         Postavy
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
+                                    <p class="mt-1 text-sm text-gray-900">
                                         Prohlédnout si aktuální Championy ve hře
                                     </p>
                                 </div>
@@ -60,17 +60,17 @@
                                 </svg>
 
                                 <div class="ml-4">
-                                    <p class="text-base font-medium text-gray-900">
+                                    <p class="text-base font-medium text-black-custom">
                                         Rotace týdne
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
-                                        Free rotation se mění každý týden v úterý
+                                    <p class="mt-1 text-sm text-gray-900">
+                                        Týdenní rotace se mění každý týden v úterý
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
-                                        Free rotace se odemkne od 11. levelu
+                                    <p class="mt-1 text-sm text-gray-900">
+                                        Rotace zdarma se odemkne od 11. levelu
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
-                                        Free rotace obsahuje 16 postav
+                                    <p class="mt-1 text-sm text-gray-900">
+                                        Rotace zdarma obsahuje 16 postav
                                     </p>
                                 </div>
                             </a>
@@ -82,29 +82,29 @@
                                 </svg>
 
                                 <div class="ml-4">
-                                    <p class="text-base font-medium text-gray-900">
+                                    <p class="text-base font-medium text-black-custom">
                                         Rotace pro nováčky
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
+                                    <p class="mt-1 text-sm text-gray-900">
                                         Postavy zdarma do 11.levelu
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
+                                    <p class="mt-1 text-sm text-gray-900">
                                         Rotace pro nováčky obsahuje 10 postav
                                     </p>
                                 </div>
                             </a>
 
-                            <a href="{{ route('skins') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                            <a href="{{ route('skins') }}" class="-m-3 p-3 flex items-start  hover:bg-gray-50 ">
                                 <!-- Heroicon name: outline/refresh -->
 
                                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
                                 <div class="ml-4">
-                                    <p class="text-base font-medium text-gray-900">
+                                    <p class="text-base font-medium text-black-custom">
                                         Arty champů
                                     </p>
-                                    <p class="mt-1 text-sm text-gray-500">
+                                    <p class="mt-1 text-sm text-gray-900">
                                         Prohlédni si fullHD obrázky všech champů
                                     </p>
                                 </div>
@@ -112,7 +112,7 @@
 
                         </div>
 
-                        <div class="px-5 py-5 bg-own-darkgray rounded-b-md space-y-6 sm:flex justify-center sm:space-y-0 sm:space-x-10 sm:px-8">
+                        <div class="px-5 py-5 bg-own-darkgray bg-opacity-70  space-y-6 sm:flex justify-center sm:space-y-0 sm:space-x-10 sm:px-8">
                             <div class="flow-root">
                                 <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
                                 <!-- Heroicon name: outline/play -->
@@ -231,9 +231,6 @@
             <a href="{{ route('news') }}" class="text-base font-medium text-gray-500 hover:text-gray-900">
                 Patch Notes
             </a>
-
-
-
         </nav>
 
         @guest
@@ -248,15 +245,11 @@
         @endguest
 
         @auth
-
-
-
             <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-
 
                 <div class="relative bg-own-orange px-3 py-2 rounded-lg">
                     <button type="button" onclick="userToggle()" class=" font-medium font-Rubik group rounded-md inline-flex items-center text-white focus:outline-none " aria-expanded="false">
-                        <span>Můj profil</span>
+                        <span>Profil</span>
 
                         <svg class=" ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -265,58 +258,56 @@
 
                     <div id="userLinks" class="hidden absolute z-40 -ml-4 mt-3 transform px-2 w-screen max-w-sm sm:px-0 lg:ml-0 -left-1 ">
                         <div class="rounded-lg shadow-lg overflow-hidden ">
+
                             <div class="relative grid gap-6 bg-own-lightgray px-5 py-6 sm:gap-8 sm:p-8">
-                                {{-- <a href="/summoner" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"> --}}
-                                <a href="/summoner/{{ Auth::user()->username }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
-                                    </svg>
-
-                                    <div class="ml-4">
-                                        <p class="text-base font-medium text-gray-900">
-                                            {{ Auth::user()->username }}
-                                        </p>
-                                        <p class="mt-1 text-sm text-gray-500">
-                                            Prohlédnout si informace o tvém League of Legends účtu
-                                        </p>
-                                    </div>
-                                </a>
 
 
-                                <a href="/profile/{{ Auth::user()->username }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                    <a href="{{ route('summoner-show', Auth::user()->username ) }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                                        </svg>
 
+                                        <div class="ml-4">
+                                            <p class="text-base font-medium text-gray-900">
+                                                {{ Auth::user()->username }}
+                                            </p>
+                                            <p class="mt-1 text-sm text-gray-500">
+                                                Prohlédnout si informace o tvém League of Legends účtu
+                                            </p>
+                                        </div>
+                                    </a>
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                                    </svg>
+                                    <a href="{{ route('account-index', Auth::user()->username) }} " class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 
-                                    <div class="ml-4">
-                                        <p class="text-base font-medium text-gray-900">
-                                            Přehled
-                                        </p>
-                                        <p class="mt-1 text-sm text-gray-500">
-                                            Prohlédnout si informace o tvém League of Legends účtu
-                                        </p>
-                                    </div>
-                                </a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                                        </svg>
+
+                                        <div class="ml-4">
+                                            <p class="text-base font-medium text-gray-900">
+                                                Přehled
+                                            </p>
+                                            <p class="mt-1 text-sm text-gray-500">
+                                                Prohlédnout si informace o tvém League of Legends účtu
+                                            </p>
+                                        </div>
+                                    </a>
 
 
                             </div>
 
-
                             <div class="px-5 py-5 bg-own-darkgray space-y-6 sm:flex justify-center sm:space-y-0 sm:space-x-10 sm:px-8">
                                 <div class="flow-root">
                                     <a href="{{ route('logout') }}"
-                                        class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
+                                        class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 group hover:bg-gray-100"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0 text-red-custom" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                         </svg>
 
-                                        <span class="ml-3 text-gray-400">Odhlásit se</span>
+                                        <span class="ml-3 text-gray-400 group-hover:text-red-custom">Odhlásit se</span>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                             {{ csrf_field() }}
@@ -325,26 +316,20 @@
                                 </div>
 
                                 <div class="flow-root">
-                                    <a href="{{ route('profile-edit', Auth::user()->username) }}" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+                                    <a href="{{ route('account-edit', Auth::user()->username) }}" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 group hover:bg-gray-100">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-shrink-0 text-red-custom" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
-                                        <span class="ml-3 text-gray-400">Nastavení</span>
+                                        <span class="ml-3 text-gray-400 group-hover:text-red-custom">Nastavení</span>
                                     </a>
                                 </div>
-
                             </div>
+
                         </div>
                     </div>
 
                 </div>
-
-
-
-
-
-
             </div>
         @endauth
 
