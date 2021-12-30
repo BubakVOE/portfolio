@@ -2,7 +2,7 @@
     <a href="{{ route('champions-show', $champion->name) }}">
 
 {{--    champion-card   --}}
-        <div class="w-60 h-72 bg-own-black border-2 border-black-custom hover:bg-own-darkgray">
+        <div class="w-60 h-72 bg-black-lighter border-2 border-black-custom hover:bg-own-darkgray">
             <div class="flex flex-col items-center h-full justify-evenly py-6 ">
 
         {{-- img + name,title --}}

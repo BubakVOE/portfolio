@@ -62,7 +62,6 @@ class FetchChampions extends Command
                     'tags' => json_encode($champion['tags']),
                     'img' => $champion['image']['full'],
                     'difficulty' => $champion['info']['difficulty'],
-
                 ]);
 
                 $pathImage = 'https://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/' . $champion['image']['full'];

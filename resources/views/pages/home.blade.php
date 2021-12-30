@@ -3,6 +3,9 @@
 
 @section('content')
 
+
+<x-alerts.message/>
+
 {{-- úvod --}}
     <section class="relative border border-white">
         <h1 class="hidden xl:block absolute uppercase text-8xl font-Raleway font-extrabold top-5 left-5 transform z-20 opacity-10">
