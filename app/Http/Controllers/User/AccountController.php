@@ -30,14 +30,13 @@ class AccountController extends Controller
         }
 
     // edit
-        public function edit($id)
+        public function edit($username)
         {
             $user = Auth()->user();
 
-            $userId = Auth()->user()->id;
 
-            $profiles = Summoner::whereIn('summoner_id', [$userId])
-            ->get();
+            $profiles = Summoner::whereIn('summoner_id', [$user->id])
+                ->get();
 
             return view('pages.account.account-edit', [
                 'user' => $user,

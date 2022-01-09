@@ -39,7 +39,6 @@ class FetchChampions extends Command
      */
     public function handle()
     {
-
         $newestPatch = Http::get('https://ddragon.leagueoflegends.com/api/versions.json')->collect()[0];
 
         $response = Http::get('https://ddragon.leagueoflegends.com/cdn/'.$newestPatch.'/data/cs_CZ/champion.json')->collect();
@@ -64,7 +63,7 @@ class FetchChampions extends Command
                     'difficulty' => $champion['info']['difficulty'],
                 ]);
 
-                $pathImage = 'https://ddragon.leagueoflegends.com/cdn/11.15.1/img/champion/' . $champion['image']['full'];
+                $pathImage = 'https://ddragon.leagueoflegends.com/cdn/'.$newestPatch.'/img/champion/' . $champion['image']['full'];
 
                 $this->info('Champion ' . $newChampion->name . ' is created to database');
             }

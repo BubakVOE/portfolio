@@ -16,13 +16,13 @@
 </head>
 <body>
 
-<div class="relative bg-black-lighter">
+<div class="relative bg-black-lighter border-b  border-own-darkgray">
 
     <x-nav.navbar-mobile/>
     <x-nav.navbar-pc/>
 </div>
 
-    <div class=" bg-white relative">
+    <div class=" relative">
         @yield('content')
     </div>
 

@@ -19,6 +19,8 @@ class HomeController extends Controller
 
     // vytáhnout si jména hráčů
         $chall_summoners_name = [];
+
+    // další detaily - tier,rank,LP
         $chall_summoners_other = [];
 
         foreach ($chall_summoners as $chall_summoner) {
@@ -26,14 +28,13 @@ class HomeController extends Controller
             $chall_summoners_other [] = $chall_summoner;
         }
 
-
-
     // vytáhnout zvlášť data o uživatelích
         $summoners_data = [];
 
         foreach ($chall_summoners_name as $chall_summoner_name) {
             $summoners_data[] = app('league-api')->getSummonerByName($chall_summoner_name);
         }
+
 
 
 

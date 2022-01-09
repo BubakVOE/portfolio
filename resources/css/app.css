@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active {
-    border-bottom: solid 2px #FF2A2A;
+    border-bottom: solid 1px #FF2A2A;
     color: #FF2A2A;
 }
 

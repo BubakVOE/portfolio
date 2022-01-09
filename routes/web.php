@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\DashboardController;
 
 // riot
 use App\Http\Controllers\Riot\ChampionsController;
+use App\Http\Controllers\Riot\RunesController;
 use App\Http\Controllers\Riot\SkinsController;
 use App\Http\Controllers\Test\TesterController;
 
@@ -43,6 +44,13 @@ route::get('/champions', [ChampionsController::class, 'index'])->name('champions
 route::get('/champion/{id}', [ChampionsController::class, 'show'])->name('champions-show');
 route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
 route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
+
+    // Runes
+route::get('/runes', [RunesController::class, 'index'])->name('runes');
+route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
+route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
+route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
+
     // Skins
 route::get('/skins', [SkinsController::class, 'index'])->name('skins');
         route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');
@@ -63,7 +71,6 @@ route::get('/news/lolko', [UpdateController::class, 'lolko'])->name('newsLolko')
 route::get('/news/web', [UpdateController::class, 'web'])->name('newsWeb');
 
 // isAdmin
-
 Route::group(['middleware' => ['auth', 'admin']], function() {
     route::get('/dashboard', [DashboardController::class, 'index']);
 

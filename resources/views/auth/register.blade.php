@@ -28,7 +28,7 @@
                         <div>
                             <div class="md:flex md:justify-between">
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                         Jméno
                                     </span>
                                     <input  id="givenName"
@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                         Příjmení
                                     </span>
                                     <input  type="text"
@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="mt-14 md:mt-16 relative md:w-7/12 md:mx-auto">
-                                <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                     Email
                                 </span>
                                 <input  type="text"
@@ -75,7 +75,7 @@
 
                             <div class="md:flex md:justify-between">
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                         Heslo
                                     </span>
                                     <input  type="password"
@@ -93,10 +93,10 @@
                                 </div>
 
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                         Potvrdit heslo
                                     </span>
-                                    <input  type="text"
+                                    <input  type="password"
                                             name="password_confirmation"
                                             class="h-12 px-2 w-full rounded border border-black-custom outline-none"
                                             required
@@ -109,7 +109,7 @@
 
                             <div class="md:flex md:justify-between">
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                         Server
                                     </span>
                                     <select name="region"
@@ -125,7 +125,7 @@
                                 </div>
 
                                 <div class="mt-14 md:mt-16 relative md:w-5/12">
-                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 bg-transparent rounded-t-md bg-black-lighter text-own-orange">
+                                    <span class="absolute px-2 pb-1 bottom-12 ml-1 rounded-t-md bg-black-lighter text-own-orange">
                                             In-game Nickname
                                     </span>
                                     <input
