@@ -40,7 +40,7 @@ class FetchRunes extends Command
     {
         $newestPatch = Http::get('https://ddragon.leagueoflegends.com/api/versions.json')->collect()[0];
 
-        $response = Http::get('https://ddragon.leagueoflegends.com/cdn/'.$newestPatch.'/data/cs_CZ/runesReforged.json.json')->collect();
+        $response = Http::get('https://ddragon.leagueoflegends.com/cdn/'.$newestPatch.'/data/cs_CZ/runesReforged.json')->collect();
 
 
 
