@@ -12,29 +12,29 @@ use RiotAPI\LeagueAPI\LeagueAPI;
 class ChampionsController extends Controller
 {
 
-
+// champions - all
     public function index()
     {
+        $test = http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion.json')
+                ->collect();
 
-        $test = http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion.json')->collect();
         $champions = Champion::all();
+
         $amount = Champion::count();
 
-
-        return view('pages/champions/index',[
+        return view('pages.champions.index',[
             'champions' => $champions,
             'amount' => $amount,
         ]);
     }
 
-
+// show specific champion
     public function show(Champion $champion, $name)
     {
-
         $champion = Champion::where('name', $name)->get()[0];
-        // dd($champion);
 
-        $champData = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$champion->name.'.json')->collect()['data'][$name];
+        $champData = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$champion->name.'.json')
+                    ->collect()['data'][$name];
 
             $skinsDatas = $champData['skins'];
 
@@ -44,41 +44,29 @@ class ChampionsController extends Controller
                 $skinsNum [] = $skinsData['num'];
             }
 
-        // $test = Http::get('ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/spell/'.$champData['spells'][0]['id'].'.jpg')->collect();
-
-
-
-
-        return view('pages/champions/champion', [
+        return view('pages.champions.show', [
             'champion' => $champion,
             'champData' => $champData,
             'skinsNum' => $skinsNum,
         ]);
-
     }
 
-
-
-    public function freeRotation()
+// weekly rotations
+    public function weeklyRotations()
     {
-        $freeRotation =app('league-api')->getChampionRotations();
+        $weeklyRotations =app('league-api')->getChampionRotations();
 
-            $freeChampionsId = $freeRotation->freeChampionIds;
+            $freeChampionsId = $weeklyRotations->freeChampionIds;
 
                 $freeChampionsData = Champion::whereIn('key', $freeChampionsId)->get();
 
-
-
-
-        return view('pages/champions/freeRotation',[
+        return view('pages.champions.weeklyRotation',[
             'freeChampionsData' => $freeChampionsData,
         ]);
-
     }
 
-
-
-    public function newbieRotation()
+// newbie rotations
+    public function newbieRotations()
     {
         $freeRotation =app('league-api')->getChampionRotations();
 
@@ -88,11 +76,10 @@ class ChampionsController extends Controller
 
                 $newbieChampionData = Champion::whereIn('key', $newbieChampionId)->get();
 
-        return view('pages/champions/newbieRotation',[
+        return view('pages.champions.newbieRotation',[
             'newbieChampionData' => $newbieChampionData,
             'newbieLevel' => $newbieLevel,
         ]);
-
     }
 
 

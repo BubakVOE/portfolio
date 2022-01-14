@@ -36,8 +36,8 @@
 
                 <li>
                     <div class="flex items-center">
-                        <a href="{{ route('freeRotations') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
-                            Free rotations
+                        <a href="{{ route('weeklyRotations') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                            Tydenní rotace
                         </a>
                     </div>
                 </li>
@@ -51,7 +51,7 @@
             <div class="">
 
                 <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl text-center flex flex-col">
-                    <span class="block xl:inline">ROTACE ZDARMA</span>
+                    <span class="block xl:inline uppercase">Tydenní rotace</span>
 
                     <div class="text-left flex flex-col my-5 ">
 

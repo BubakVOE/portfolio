@@ -24,9 +24,12 @@ class SkinsController extends Controller
         ]);
     }
 
-    public function show(Champion $champion)
+    public function show($username)
     {
-        $dataSkin = Http::get('https://ddragon.leagueoflegends.com/cdn/11.19.1/data/cs_CZ/champion/'.$champion->nickname.'.json')->collect()['data'][$champion->nickname]['skins'];
+
+        $championName = $username;
+
+        $dataSkin = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$username.'.json')->collect()['data'][$username]['skins'];
 
         // dd($skins);
         //     $saveSkins = [];
@@ -42,7 +45,7 @@ class SkinsController extends Controller
         //         }
 
         return view('pages.skins.show',[
-            'champion' => $champion,
+            'championName' => $championName,
             'dataSkin' => $dataSkin,
         ]);
     }

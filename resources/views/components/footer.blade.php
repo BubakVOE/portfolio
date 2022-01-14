@@ -3,33 +3,35 @@
 
         <div class="flex flex-wrap w-full  lg:w-10/12  ">
             <div class="w-full px-4 mb-6 md:w-1/2 md:mb-0 text-center ">
-                <h6 class="mb-3 text-own-red text-lg font-poppins md:mb-3">Odkazy</h6>
+                <h6 class="mb-3 text-own-red text-lg font-poppins md:mb-3">Hlavní odkazy</h6>
                 <div class="flex flex-wrap ">
 
                     <ul class="w-full px-4 sm:w-1/2 text-left">
                         <li class="mb-2">
-                            <a href="/" class="text-gray-400 hover:text-white hover:underline">Domů</a>
+                            <a href="{{ route('domu') }}" class="text-gray-400 hover:text-white hover:underline">Domů</a>
                         </li>
 
                         <li class="mb-2">
-                            <a href="/galerie" class="text-gray-400 hover:text-white hover:underline">Galerie</a>
+                            <a href="{{ route('champions') }}" class="text-gray-400 hover:text-white hover:underline">champions</a>
                         </li>
 
                         <li class="mb-2">
-                            <a href="/cenik" class="text-gray-400 hover:text-white hover:underline">Ceník</a>
+                            <a href="{{ route('skins') }}" class="text-gray-400 hover:text-white hover:underline">skins</a>
                         </li>
 
                         <li class="mb-2">
-                            <a href="/kontakt" class="text-gray-400 hover:text-white hover:underline">Kontakt</a>
+                            <a href="{{ route('newsWeb') }}" class="text-gray-400 hover:text-white hover:underline">newsWeb</a>
                         </li>
 
                         <li class="mb-2">
-                            <a href="/kontakt" class="text-gray-400 hover:text-white hover:underline">Rezervace</a>
+                            <a href="{{ route('newsLolko') }}" class="text-gray-400 hover:text-white hover:underline">newsLolko</a>
                         </li>
                     </ul>
 
                 </div>
             </div>
+
+
 
             <div class="w-full px-4 md:w-1/2 text-center">
                 <h6 class="mb-3 text-own-red text-lg font-poppins md:mb-3">Sociální sítě</h6>

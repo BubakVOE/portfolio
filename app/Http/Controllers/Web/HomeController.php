@@ -15,7 +15,7 @@ class HomeController extends Controller
     // prvních 5 nejlepších z EUNE | SoloQ
         $chall_summoners = Http::get('https://eun1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key=RGAPI-2f022c18-2cc9-473d-94c9-4be5391fc08d')
                 ->collect()
-                ->take(5);
+                ->take(4);
 
     // vytáhnout si jména hráčů
         $chall_summoners_name = [];

@@ -11,7 +11,7 @@
             <button type="button" onclick="hamburgerToggle()" class="  border-2 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
                 <span class="sr-only">Open menu</span>
                 <!-- Heroicon name: outline/menu -->
-                <svg class="h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="h-6 w-6  " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
@@ -29,7 +29,7 @@
                 <button type="button" onclick="champToggle()" class="font-bold text-xl text-own-orange font-Rubik pb-1 hover:text-own-red group rounded-md inline-flex items-center focus:outline-none " aria-expanded="false">
                     <span>Postavy</span>
 
-                    <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                     </svg>
                 </button>
@@ -53,7 +53,7 @@
                                 </div>
                             </a>
 
-                            <a href="{{ route('freeRotations') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                            <a href="{{ route('weeklyRotations') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -75,7 +75,7 @@
                                 </div>
                             </a>
 
-                            <a href="{{ route('newbieRotation') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                            <a href="{{ route('newbieRotations') }}" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 h-6 w-6 text-own-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />

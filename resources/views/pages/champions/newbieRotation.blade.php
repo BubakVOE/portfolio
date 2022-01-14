@@ -37,8 +37,8 @@
 
             <li>
                 <div class="flex items-center">
-                    <a href="{{ route('newbieRotation') }}" class="mr-2 text-sm font-medium text-black-custom ">
-                        Newbie-rotations
+                    <a href="{{ route('newbieRotations') }}" class="mr-2 text-sm font-medium text-black-custom ">
+                        Začátečnícká rotace
                     </a>
                 </div>
             </li>

@@ -41,9 +41,9 @@ Auth::routes();
 
     // Champions
 route::get('/champions', [ChampionsController::class, 'index'])->name('champions');
-route::get('/champion/{id}', [ChampionsController::class, 'show'])->name('champions-show');
-route::get('/champions/free-rotations', [ChampionsController::class, 'freeRotation'])->name('freeRotations');
-route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotation'])->name('newbieRotation');
+route::get('/champion/{username}', [ChampionsController::class, 'show'])->name('champions-show');
+route::get('/champions/weekly-rotations', [ChampionsController::class, 'weeklyRotations'])->name('weeklyRotations');
+route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotations'])->name('newbieRotations');
 
     // Runes
 route::get('/runes', [RunesController::class, 'index'])->name('runes');
@@ -53,7 +53,7 @@ route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
 
     // Skins
 route::get('/skins', [SkinsController::class, 'index'])->name('skins');
-        route::get('/skins/{champion}', [SkinsController::class, 'show'])->name('skins-show');
+route::get('/skin/{username}', [SkinsController::class, 'show'])->name('skins-show');
     // Profile data
 route::get('/account/{username}', [AccountController::class, 'index'])->name('account-index');
 route::get('/account/{username}/edit', [AccountController::class, 'edit'])->name('account-edit');

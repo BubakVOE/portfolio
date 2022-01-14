@@ -107,7 +107,7 @@
                                         @endforeach
                                     </div>
 
-                                    <div class="relative cursor-pointer focus:outline-none mt-4">
+                                    <div class="relative focus:outline-none mt-4">
                                         <h1 class="">
                                             {{ $champData['partype'] }}
                                         </h1>
@@ -144,7 +144,7 @@
                         </div>
 
                         <div class="text-center mt-10 md:mt-20 font-medium text-white  focus:outline-none">
-                            <a href="{{ route('skins-show', $champion->id ) }}" class="bg-black-lighter  rounded-md hover:bg-black-custom cursor-pointer w-full  py-3 px-8 text-base ">
+                            <a href="{{ route('skins-show', $champion->name ) }}" class="bg-black-lighter  rounded-md hover:bg-black-custom cursor-pointer w-full  py-3 px-8 text-base ">
                                 Prohlédnout si Splash obrázky
                             </a>
                         </div>

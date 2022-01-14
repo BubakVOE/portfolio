@@ -34,8 +34,8 @@
 
             <li>
                 <div class="flex items-center">
-                    <a href="{{ route('skins-show',$champion->id) }}" class="mr-2 text-sm font-medium text-black-custom ">
-                        {{ $champion->nickname }}
+                    <a href="{{ route('skins-show', $championName) }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                        {{ $championName }}
                     </a>
                 </div>
             </li>
@@ -49,13 +49,13 @@
         <div class="">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl text-center flex flex-col">
                 <span class="block xl:inline uppercase w-2/12 mx-auto">
-                    <a class="flex items-center justify-evenly flex-row" href="{{ route('champions-show', $champion->nickname) }}">
+                    <a class="flex items-center justify-evenly flex-row" href="{{ route('champions-show', $championName) }}">
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
 
-                        {{ $champion->nickname }}
+                        {{ $championName }}
                     </a>
                 </span>
 
@@ -70,11 +70,11 @@
         <div class="grid grid-cols-1 place-items-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg px-4 py-24 md:px-16 md:py-16">
             @foreach ($dataSkin as $dataSkin)
                 <div>
-                    <img src="{{ ('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/'.$champion->nickname.'_'.$dataSkin['num'].'.jpg') }}" alt="">
+                    <img src="{{ ('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/'.$championName.'_'.$dataSkin['num'].'.jpg') }}" alt="">
 
                     <div class="font-bold text-center relative bottom-8 md:bottom-10 rounded-t-lg w-6/12 mx-auto py-2 backdrop-filter backdrop-blur-xl text-own-lightgray text-xs md:text-base">
                         @if ($dataSkin['name'] == 'default')
-                            <h1 class="">{{ $champion->nickname }}</h1>
+                            <h1 class="">{{ $championName }}</h1>
                         @else
                             <h1 class="">{{ $dataSkin['name'] }}</h1>
                         @endif

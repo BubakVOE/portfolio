@@ -54,11 +54,6 @@ class SummonerController extends Controller
                     }
 
 
-
-
-
-
-
             return view('pages.summoner.show', [
                 'username' => $username,
 

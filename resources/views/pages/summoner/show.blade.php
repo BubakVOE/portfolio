@@ -2,9 +2,7 @@
 
 @section('content')
 
-
     <div class="flex justify-center py-10 ">
-
 
         <div class="w-10/12 mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-br from-gradient-black to-gray-old rounded-lg">
             <div class="lg:text-center">
@@ -19,19 +17,7 @@
         {{-- duoq/flexky --}}
                 <div>
 
-                    <dl class="mt-10 space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                        @if ($summonerData[0]['queueType'] == 'RANKED_SOLO_5x5')
 
-                            <x-summoner.summoner-duoq :summonerData='$summonerData[0]'/>
-                            <x-summoner.summoner-flex :summonerData='$summonerData[1]'/>
-
-                        @else
-
-                            <x-summoner.summoner-duoq :summonerData='$summonerData[1]'/>
-                            <x-summoner.summoner-flex :summonerData='$summonerData[0]'/>
-
-                        @endif
-                    </dl>
                 </div>
             </div>
 {{-- nejhranější postavy || pokud více, tak změnit $number < |...| --}}

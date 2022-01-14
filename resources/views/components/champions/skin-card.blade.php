@@ -1,5 +1,5 @@
 <div>
-    <a href="{{ route('skins-show', $skin->id) }}">
+    <a href="{{ route('skins-show', $skin->name) }}">
 
         <div class="bg-black-custom border-2 border-black-custom hover:bg-own-darkgray">
             <div class="flex flex-col items-center h-full justify-evenly py-6 ">
