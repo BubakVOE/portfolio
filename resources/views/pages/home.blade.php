@@ -157,7 +157,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:text-center">
                     <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl uppercase font-poppins  text-transparent bg-clip-text bg-gradient-to-r from-gradient-red to-own-orange pt-2">
-                        Proč u nás ?</h2>
+                        Proč u nás ?
+                    </h1>
 
                     <p class="mt-4 max-w-2xl text-lg text-gray-200 lg:mx-auto">
                         Na naší webové stránce můžeš najít spoustu informací o svém účtu, které ti následně můžou pomoct ve zlepšování tvého <strong>skillu</strong>
@@ -241,45 +242,104 @@
         </h1>
 
         <div class="overflow-hidden mx-16">
-            <div class="w-11/12 mx-auto bg-own-darkgray rounded-lg p-10">
+            <div class="w-11/12 mx-auto bg-own-darkgray rounded-lg p-10 space-y-10">
 
-                @if ($summoners_data  == [])
+                <div class="lg:text-center">
+                    <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl uppercase font-poppins  text-transparent bg-clip-text bg-gradient-to-r from-gradient-red to-own-orange pt-2">
+                        Nejlepší hráčí
+                    </h1>
 
-                    <div class="text-center ">
-                        <h1 class="font-bold text-xl">Nebyly nalezeny data</h1>
-                    </div>
+                    <p class="mt-4 max-w-2xl text-lg text-gray-200 lg:mx-auto">
+                        Nejlepší hráči z <strong>EUNE</strong> regionů
+                    </p>
+                </div>
 
-                @else
-                    <div class="grid grid-cols-4 place-items-center gap-x-5">
+            {{-- eune --}}
+                <div class="">
 
-                            @foreach ($summoners_data as $summoner_data)
+                    @if ($euneChallData  == [])
+
+                        <div class="text-center ">
+                            <h1 class="font-bold text-xl">Nebyly nalezeny data</h1>
+                        </div>
+
+                    @else
+
+                        <div class="grid grid-cols-4 place-items-center gap-x-5">
+                            @foreach ($euneChallData as $euneChallData)
                                 <div class="bg-own-darkgray border-t border-l border-r rounded-t-xl border-gray-medium  w-full  pt-3 px-3 flex flex-col items-center">
-                                    <img class="rounded-xl w-20 " src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/profileicon/'.$summoner_data->profileIconId.'.png' }}" >
+                                    <img class="rounded-xl w-20 " src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/profileicon/'.$euneChallData->profileIconId.'.png' }}" >
                                     <hr class="mt-3 border border-own-darkgray w-10/12 mx-auto ">
                                 </div>
                             @endforeach
 
-
-                            @foreach ($chall_summoners_other as $chall_summoner_other)
-                                <a class="w-full bg-own-darkgray border-b border-l rounded-b-xl border-r border-gray-medium   pt-3 space-y-3 pb-3 flex flex-col items-center justify-center " href="{{ route('summoner-show', $chall_summoner_other['summonerName']) }}">
-                                    <h1 class="text-xl font-montserrat text-white font-extrabold">{{ $chall_summoner_other['summonerName'] }}</h1>
+                            @foreach ($euneChallOthers as $euneChallOther)
+                                <a class="w-full bg-own-darkgray border-b border-l rounded-b-xl border-r border-gray-medium   pt-3 space-y-3 pb-3 flex flex-col items-center justify-center " href="{{ route('summoner-show', $euneChallOther['summonerName']) }}">
+                                    <h1 class="text-xl font-montserrat text-white font-extrabold">{{ $euneChallOther['summonerName'] }}</h1>
 
                                     <div class="bg-own-darkgray p-1 shadow-inner shadow-">
-                                        <img class="h-28 w-28" src="{{ asset('img/summoner/emblems/Emblem_'.$chall_summoner_other['tier'].'.png') }}">
+                                        <img class="h-28 w-28" src="{{ asset('img/summoner/emblems/Emblem_'.$euneChallOther['tier'].'.png') }}">
                                     </div>
 
                                     <div class="flex space-x-1 text-own-lightgray">
-                                        <h1 class="font-bold">{{ $chall_summoner_other['tier'] }}</h1>
-                                        <h1 class="font-extrabold">{{ $chall_summoner_other['rank'] }}</h1>
+                                        <h1 class="font-bold">{{ $euneChallOther['tier'] }}</h1>
+                                        <h1 class="font-extrabold">{{ $euneChallOther['rank'] }}</h1>
                                     </div>
 
-                                    <h1 class="text-black-custom">LP: {{ $chall_summoner_other['leaguePoints'] }}</h1>
+                                    <h1 class="text-black-custom">LP: {{ $euneChallOther['leaguePoints'] }}</h1>
                                 </a>
                             @endforeach
+                        </div>
 
+                    @endif
+                </div>
 
-                    </div>
-                @endif
+                <div>
+                    <p class="text-center text-lg text-gray-200 lg:mx-auto">
+                        Nejlepší hráči z <strong>WEST</strong> regionů
+                    </p>
+                </div>
+
+            {{-- euw --}}
+                <div class="">
+
+                    @if ($euwChallData  == [])
+
+                        <div class="text-center ">
+                            <h1 class="font-bold text-xl">Nebyly nalezeny data</h1>
+                        </div>
+
+                    @else
+
+                        <div class="grid grid-cols-4 place-items-center gap-x-5">
+                            @foreach ($euwChallData as $euwChallData)
+                                <div class="bg-own-darkgray border-t border-l border-r rounded-t-xl border-gray-medium  w-full  pt-3 px-3 flex flex-col items-center">
+                                    <img class="rounded-xl w-20 " src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/profileicon/'.$euwChallData->profileIconId.'.png' }}" >
+                                    <hr class="mt-3 border border-own-darkgray w-10/12 mx-auto ">
+                                </div>
+                            @endforeach
+
+                            @foreach ($euwChallOthers as $euwChallOther)
+                                <a class="w-full bg-own-darkgray border-b border-l rounded-b-xl border-r border-gray-medium   pt-3 space-y-3 pb-3 flex flex-col items-center justify-center " href="{{ route('summoner-show', $euwChallOther['summonerName']) }}">
+                                    <h1 class="text-xl font-montserrat text-white font-extrabold">{{ $euwChallOther['summonerName'] }}</h1>
+
+                                    <div class="bg-own-darkgray p-1 shadow-inner shadow-">
+                                        <img class="h-28 w-28" src="{{ asset('img/summoner/emblems/Emblem_'.$euwChallOther['tier'].'.png') }}">
+                                    </div>
+
+                                    <div class="flex space-x-1 text-own-lightgray">
+                                        <h1 class="font-bold">{{ $euwChallOther['tier'] }}</h1>
+                                        <h1 class="font-extrabold">{{ $euwChallOther['rank'] }}</h1>
+                                    </div>
+
+                                    <h1 class="text-black-custom">LP: {{ $euwChallOther['leaguePoints'] }}</h1>
+                                </a>
+                            @endforeach
+                        </div>
+
+                    @endif
+                </div>
+
             </div>
         </div>
     </section>

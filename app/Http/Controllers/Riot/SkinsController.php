@@ -29,20 +29,9 @@ class SkinsController extends Controller
 
         $championName = $username;
 
-        $dataSkin = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$username.'.json')->collect()['data'][$username]['skins'];
 
-        // dd($skins);
-        //     $saveSkins = [];
-
-        //         foreach ($skins as $skin) {
-        //             $saveSkins[] = $skin;
-        //         }
-
-        //     $saveName = [];
-
-        //         foreach ($skins as $skin) {
-        //             $saveName[] = $skin['name'];
-        //         }
+        $dataSkin = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$username.'.json')
+                    ->collect()['data'][$username]['skins'];
 
         return view('pages.skins.show',[
             'championName' => $championName,

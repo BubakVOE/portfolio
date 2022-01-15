@@ -43,28 +43,32 @@
         </ol>
     </nav>
 
-
     <div class="max-w-3xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-full lg:px-8">
 
-        <div class="">
-            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl text-center flex flex-col">
-                <span class="block xl:inline uppercase w-2/12 mx-auto">
-                    <a class="flex items-center justify-evenly flex-row" href="{{ route('champions-show', $championName) }}">
+        <div class="relative flex flex-col items-center justify-center">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+            <div class="h-80 overflow-hidden">
+                <img class="" src="{{ ('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/'.$championName.'_0.jpg') }}" alt="">
+            </div>
 
-                        {{ $championName }}
-                    </a>
-                </span>
+            <div class="text-center absolute top-1/2">
+                <div class="backdrop-filter  backdrop-blur-xl p-5">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                        <a class="flex items-center justify-evenly flex-row" href="{{ route('champions-show', $championName) }}">
 
-                <div class="my-5 flex items-center justify-center">
-                    <span class="block font-bold text-xl xl:inline text-gray-700">
-                        Splash obrázky
-                    </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+
+                            {{ $championName }}
+                        </a>
+                    </h1>
+
+                    <h2 class="text-gray-200">Splash obrázky</h2>
+
                 </div>
-            </h1>
+            </div>
+
         </div>
 
         <div class="grid grid-cols-1 place-items-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg px-4 py-24 md:px-16 md:py-16">

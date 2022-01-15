@@ -11,36 +11,67 @@ class HomeController extends Controller
 {
     public function index(User $id)
     {
-
-    // prvních 5 nejlepších z EUNE | SoloQ
-        $chall_summoners = Http::get('https://eun1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key=RGAPI-2f022c18-2cc9-473d-94c9-4be5391fc08d')
+    // EUNE EUNE EUNE EUNE EUNE EUNE EUNE EUNE EUNE EUN EUNE EUNE EUNE EUN EUNE EUNE EUNE EUN EUNE EUNE EUNE EUN EUNE EUNE EUNE EUNE
+        // prvních 5 nejlepších z EUNE | SoloQ
+        $euneChalls = Http::get('https://eun1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key=RGAPI-2f022c18-2cc9-473d-94c9-4be5391fc08d')
                 ->collect()
                 ->take(4);
 
-    // vytáhnout si jména hráčů
-        $chall_summoners_name = [];
+        // vytáhnout si jména hráčů
+        $euneChallNames = [];
 
-    // další detaily - tier,rank,LP
-        $chall_summoners_other = [];
+        // další detaily - tier,rank,LP
+        $euneChallOthers = [];
 
-        foreach ($chall_summoners as $chall_summoner) {
-            $chall_summoners_name [] = $chall_summoner['summonerName'];
-            $chall_summoners_other [] = $chall_summoner;
+        foreach ($euneChalls as $euneChall) {
+            $euneChallNames [] = $euneChall['summonerName'];
+            $euneChallOthers [] = $euneChall;
         }
 
-    // vytáhnout zvlášť data o uživatelích
-        $summoners_data = [];
+        // vytáhnout zvlášť data o uživatelích
+        $euneChallData = [];
 
-        foreach ($chall_summoners_name as $chall_summoner_name) {
-            $summoners_data[] = app('league-api')->getSummonerByName($chall_summoner_name);
+        foreach ($euneChallNames as $euneChallNames) {
+            $euneChallData[] = app('league-api')->getSummonerByName($euneChallNames);
         }
 
+    // EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW
+        // prvních 5 nejlepších z EUNE | SoloQ
+        $euwChalls = Http::get('https://euw1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key=RGAPI-2f022c18-2cc9-473d-94c9-4be5391fc08d')
+                ->collect()
+                ->take(4);
 
+        // vytáhnout si jména hráčů
+        $euwChallNames = [];
+
+        // další detaily - tier,rank,LP
+        $euwChallOthers = [];
+
+        foreach ($euwChalls as $euwChall) {
+            $euwChallNames [] = $euwChall['summonerName'];
+            $euwChallOthers [] = $euwChall;
+        }
+
+        // vytáhnout zvlášť data o uživatelích
+        $euwChallData = [];
+
+        foreach ($euwChallNames as $euwChallNames) {
+            $euwChallData[] = app('league-api')->getSummonerByName($euwChallNames);
+        }
 
 
         return view('pages.home', [
-            'summoners_data'=> $summoners_data,
-            'chall_summoners_other' => $chall_summoners_other,
+            'euneChallData'=> $euneChallData,
+            'euneChallOthers' => $euneChallOthers,
+
+            'euwChallData'=> $euwChallData,
+            'euwChallOthers' => $euwChallOthers,
         ]);
     }
+
+
+
+
+
+
 }
