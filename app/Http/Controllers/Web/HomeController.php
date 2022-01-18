@@ -13,11 +13,10 @@ class HomeController extends Controller
     {
     // EUNE EUNE EUNE EUNE EUNE EUNE EUNE EUNE EUNE EUN EUNE EUNE EUNE EUN EUNE EUNE EUNE EUN EUNE EUNE EUNE EUN EUNE EUNE EUNE EUNE
         // první 4 nejlepší z EUNE | SoloQ
-        $euneChalls = Http::get('https://eun1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key=RGAPI-2f022c18-2cc9-473d-94c9-4be5391fc08d')
+        $euneChalls = Http::get('https://eun1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key='.env('RIOT_API_KEY').'')
                 ->collect()
                 ->take(4);
 
-                dd($euneChalls);
 
         // vytáhnout si jména hráčů
         $euneChallNames = [];
@@ -30,20 +29,22 @@ class HomeController extends Controller
             $euneChallOthers [] = $euneChall;
         }
 
-
         // vytáhnout zvlášť data o uživatelích
         $euneChallData = [];
 
-        foreach ($euneChallNames as $euneChallName) {
-            $euneChallData[] = app('league-api')->getSummonerByName($euneChallName);
+        foreach($euneChallNames as $euneChallName)
+        {
+            // $euneChallData[] = app('league-api')->getSummonerByName($euneChallName);
+            $euneChallData[] = Http::get('https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'.$euneChallName.'?api_key='.env('RIOT_API_KEY').'')->collect();
         }
 
         dd($euneChallData);
 
 
+
     // EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW EUW
         // prvních 5 nejlepších z EUNE | SoloQ
-        $euwChalls = Http::get('https://euw1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key=RGAPI-2f022c18-2cc9-473d-94c9-4be5391fc08d')
+        $euwChalls = Http::get('https://euw1.api.riotgames.com/lol/league-exp/v4/entries/RANKED_SOLO_5x5/CHALLENGER/I?page=1&api_key='.env('RIOT_API_KEY').'')
                 ->collect()
                 ->take(4);
 
@@ -57,13 +58,15 @@ class HomeController extends Controller
             $euwChallNames [] = $euwChall['summonerName'];
             $euwChallOthers [] = $euwChall;
         }
-
         // vytáhnout zvlášť data o uživatelích
         $euwChallData = [];
 
-        foreach ($euwChallNames as $euwChallNames) {
-            $euwChallData[] = app('league-api')->getSummonerByName($euwChallNames);
+        foreach($euwChallNames as $euwChallName)
+        {
+            $euwChallData[] = Http::get('https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'.$euwChallName.'?api_key='.env('RIOT_API_KEY').'')->collect();
         }
+
+
 
 
         return view('pages.home', [

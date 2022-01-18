@@ -39,9 +39,9 @@
 
                 <div class="mt-10">
                     <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10 text-white">
-                    @foreach ($matchHistories as $matchHistory)
-                        <x-summoner.summoner-match-history :matchId='$matchHistory' :username='$username'/>
-                     @endforeach
+                        @foreach ($matchHistories as $matchHistory)
+                            <x-summoner.summoner-match-history :matchId='$matchHistory' :username='$username'/>
+                        @endforeach
                     </dl>
                 </div>
             </div>

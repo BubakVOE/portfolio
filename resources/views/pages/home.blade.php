@@ -304,7 +304,7 @@
             {{-- eune --}}
                 <div class="">
 
-                    @if ($euneChallData  == [])
+                    {{-- @if ($euneChallData  == [])
 
                         <div class="text-center ">
                             <h1 class="font-bold text-xl">Nebyly nalezeny data</h1>
@@ -338,7 +338,7 @@
                             @endforeach
                         </div>
 
-                    @endif
+                    @endif --}}
                 </div>
 
                 <div>
@@ -348,7 +348,7 @@
                 </div>
 
             {{-- euw --}}
-                <div class="">
+                {{-- <div class="">
 
                     @if ($euwChallData  == [])
 
@@ -385,7 +385,7 @@
                         </div>
 
                     @endif
-                </div>
+                </div> --}}
 
             </div>
         </div>
