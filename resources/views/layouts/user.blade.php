@@ -60,6 +60,15 @@
         }
     }
 
+    function otherToggle() {
+        var x = document.getElementById("otherLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
     function vipToggle() {
         var x = document.getElementById("vipLinks");
         if (x.style.display === "block") {
