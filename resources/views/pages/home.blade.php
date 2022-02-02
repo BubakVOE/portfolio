@@ -304,7 +304,7 @@
             {{-- eune --}}
                 <div class="">
 
-                    {{-- @if ($euneChallData  == [])
+                    @if ($euneChallData  == [])
 
                         <div class="text-center ">
                             <h1 class="font-bold text-xl">Nebyly nalezeny data</h1>
@@ -315,7 +315,7 @@
                         <div class="grid grid-cols-4 place-items-center gap-x-5">
                             @foreach ($euneChallData as $euneChallData)
                                 <div class="bg-own-darkgray border-t border-l border-r rounded-t-xl border-gray-medium  w-full  pt-3 px-3 flex flex-col items-center">
-                                    <img class="rounded-xl w-20 " src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/profileicon/'.$euneChallData->profileIconId.'.png' }}" >
+                                    {{-- <img class="rounded-xl w-20 " src="{{ 'https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/img/profileicon/'.$euneChallData->profileIconId.'.png' }}" > --}}
                                     <hr class="mt-3 border border-own-darkgray w-10/12 mx-auto ">
                                 </div>
                             @endforeach
@@ -338,7 +338,7 @@
                             @endforeach
                         </div>
 
-                    @endif --}}
+                    @endif
                 </div>
 
                 <div>

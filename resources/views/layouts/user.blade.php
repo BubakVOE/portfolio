@@ -54,7 +54,7 @@
     function champToggle() {
         var x = document.getElementById("champLinks");
         if (x.style.display === "block") {
-            x.style.display = "none";
+            x.style.display = "none";   
         } else {
             x.style.display = "block";
         }

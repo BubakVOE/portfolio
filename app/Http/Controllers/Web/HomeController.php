@@ -35,10 +35,9 @@ class HomeController extends Controller
         foreach($euneChallNames as $euneChallName)
         {
             // $euneChallData[] = app('league-api')->getSummonerByName($euneChallName);
-            $euneChallData[] = Http::get('https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'.$euneChallName.'?api_key='.env('RIOT_API_KEY').'')->collect();
+            $euneChallData[] = Http::get('https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'.$euneChallName.'?api_key='.env('RIOT_API_KEY').'')
+            ->collect();
         }
-
-        dd($euneChallData);
 
 
 
