@@ -41,7 +41,7 @@ class FetchChampions extends Command
     {
         $newestPatch = Http::get('https://ddragon.leagueoflegends.com/api/versions.json')->collect()[0];
 
-        $response = Http::get('https://ddragon.leagueoflegends.com/cdn/'.$newestPatch.'/data/cs_CZ/champion.json')->collect();
+        $response = Http::get('https://ddragon.leagueoflegends.com/cdn/' . $newestPatch . '/data/cs_CZ/champion.json')->collect();
 
         $champions = $response['data'];
 
@@ -49,9 +49,8 @@ class FetchChampions extends Command
 
             $exists = Champion::where('key', '=', $champion['key'])->exists();
 
-            if($exists) {
+            if ($exists) {
                 $this->info('Champion ' . $champion['name'] . ' is exists in database');
-
             } else {
                 $newChampion = Champion::create([
                     'key' => $champion['key'],
@@ -63,7 +62,9 @@ class FetchChampions extends Command
                     'difficulty' => $champion['info']['difficulty'],
                 ]);
 
-                $pathImage = 'https://ddragon.leagueoflegends.com/cdn/'.$newestPatch.'/img/champion/' . $champion['image']['full'];
+                $pathImage = 'https://ddragon.leagueoflegends.com/cdn/' . $newestPatch . '/img/champion/' . $champion['image']['full'];
+
+                $newChampion->addMediaFromUrl($pathImage)->toMediaCollection('avatars');
 
                 $this->info('Champion ' . $newChampion->name . ' is created to database');
             }

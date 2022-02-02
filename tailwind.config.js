@@ -4,8 +4,14 @@ module.exports = {
       "./resources/**/*.js",
       "./resources/**/*.vue",
     ],
-    theme:{
+    theme: {
         extend: {
+
+            fontFamily: {
+                poppins: 'Poppins, sans-serif',
+                roboto: 'Roboto, sans-serif',
+                rubik: 'Rubik, sans-serif',
+            },
 
             animation: {
                 backdrop: 'backdrop 20s infinite',
@@ -14,10 +20,10 @@ module.exports = {
             keyframes: {
                 backdrop: {
                     '0%': {
-                        backgroundColor: '#ff0000',
+                        backgroundColor: '#FF0000',
                     },
                     '25%': {
-                        backgroundColor: '#008aff',
+                        backgroundColor: '#008AFF',
                     },
                     '50%': {
                         backgroundColor: '#303030',
@@ -26,7 +32,7 @@ module.exports = {
                         backgroundColor: '#14CC60',
                     },
                     '100%': {
-                        backgroundColor: '#ff0000',
+                        backgroundColor: '#FF0000',
                     },
                 },
             },
@@ -76,60 +82,51 @@ module.exports = {
                 '11/12':	'91.666667%',
             },
 
-            fontFamily: {
-                montserrat: 'Montserrat, sans-serif',
-                poppins: 'Poppins, sans-serif',
-                apple: '-apple-system, BlinkMacSystemFont Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif',
-                inter: 'Inter, sans-serif',
-                Rubik: 'Rubik, sans-serif',
-                Raleway: 'Raleway, sans-serif',
-            },
-
             colors: {
                 red: {
-                    'custom':'#e30022',
+                    'custom':'#E30022',
                 },
-
                 green: {
-                    'custom':'#70e000',
+                    'custom':'#70E000',
                 },
-                
                 gray: {
                     'dark':'#090909',
                     'old':'#252425',
                     'medium':'#1C1D21',
                     'light':'#535253',
                 },
-
                 black: {
                     'custom':'#000000',
                     'lighter':'#171717',
                 },
-
                 own: {
                     'darkgray':'#444444',
                     'lightgray':'#B9B9B9',
                     'red':'#FF2A2A',
                     'orange':'#FF4C29',
                 },
-
                 gradient: {
                     'red': '#DA0037',
                     'black': '#171717',
                 },
-
                 blue: {
                     'light':'#00d9ff',
                     'dark':'#0011ff',
                     'glass':'#577AB4',
                 },
             },
+
         },
     },
+    plugins: [],
+  }
 
-    plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/aspect-ratio'),
-    ],
 
-}
+
+
+
+
+
+
+
+

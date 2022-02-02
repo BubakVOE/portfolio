@@ -2,67 +2,51 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Models\User;
-use App\Models\Summoner;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Connector\RiotGameConnector;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Facades\Http;
 
-use RiotAPI\LeagueAPI\LeagueAPI;
-use RiotAPI\Base\Definitions\Region;
 
 class SummonerController extends Controller
 {
 
-    // index
-        public function index()
-        {
-            // $userId = Auth()->user()->id;
 
-            // $summoner = Summoner::whereIn('summoner_id', [$userId])
-            //             ->get();
+    protected $riot;
 
-            return view('pages.summoner.index');
-        }
+    public function __construct()
+    {
+        $this->riot = new RiotGameConnector;
+    }
 
-    // show
-        public function show($username)
-        {
-            $summoner = app('league-api')->getSummonerByName($username);
+    public function index()
+    {
+        return view('pages.summoner.index');
+    }
 
-                $championMastery = app('league-api')->getChampionMasteries($summoner->id);
 
-            // soloq/duoq | flexky
-                $summonerData = Http::get('https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/'.$summoner->id.'?api_key='.env('RIOT_API_KEY').'')
-                                    ->collect();
+    public function show($username)
+    {
+        $summoner = $this->riot->getSummoner($username);
+        $summonerStats = $this->riot->getSummonerStats($summoner);
+        $championMastery = $this->riot->getSummonerTopChampionsList($summoner);
+        $matchIds = $this->riot->getSummonerMatchHistoriesIds($summoner, 16);
+        $matchHistories = $this->riot->getMatchHistories($matchIds, $summoner);
 
-            //EUN1_2946376800, EUN1_2946376000, ....
-            // aktuálně je historie 6 zápasů, pro zvětšení změnít => count na větší
-                $matchIds = Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/'.$summoner->puuid.'/ids?start=0&count=6&api_key='.env('RIOT_API_KEY').'')
-                                ->collect();
-            // protočím všech 5 match historii
-                $matchHistories = [];
-
-                    foreach ($matchIds as $matchId) {
-                        $matchHistories [] = $matchId = Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/'.$matchId.'?api_key='.env('RIOT_API_KEY').'')
-                                        ->collect()['info'];
-                    }
-
-            return view('pages.summoner.show', [
-                'username' => $username,
-
-                'summoner' => $summoner,
-                'championMastery' => $championMastery,
-                'matchHistories' => $matchHistories,
-                'summonerData' => $summonerData,
-            ]);
-        }
+        return view('pages.summoner.show', [
+            'username' => $username,
+            'summoner' => $summoner,
+            'championMastery' => $championMastery,
+            'matchHistories' => $matchHistories,
+            'summonerData' => $summonerStats,
+        ]);
+    }
 
 
         public function matchHistory($username, $matchHistory)
         {
+
+            $matchHistory = $this->riot->getMatchDetail($matchHistory);
+
             return view('pages.summoner.matchHistory', [
                 'username' => $username,
                 'matchHistory' => $matchHistory,

@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Riot\ChampionsController;
 use App\Http\Controllers\Riot\RunesController;
 use App\Http\Controllers\Riot\SkinsController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Test\TesterController;
 
 // user
@@ -36,44 +37,46 @@ use App\Http\Controllers\Web\HomeController;
 Auth::routes();
 
 // users
-    // Hlávní stránka
-    route::get('/', [HomeController::class, 'index'])->name('domu');
+// Hlávní stránka
+route::get('/', [HomeController::class, 'index'])->name('domu');
 
-    // Champions
+// Champions
 route::get('/champions', [ChampionsController::class, 'index'])->name('champions');
-route::get('/champion/{username}', [ChampionsController::class, 'show'])->name('champions-show');
+route::get('/champion/{champion:name}', [ChampionsController::class, 'show'])->name('champions-show');
 route::get('/champions/weekly-rotations', [ChampionsController::class, 'weeklyRotations'])->name('weeklyRotations');
 route::get('/champions/newbie-rotations', [ChampionsController::class, 'newbieRotations'])->name('newbieRotations');
 
-    // Runes
+// Runes
 route::get('/runes', [RunesController::class, 'index'])->name('runes');
 route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
 route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
 route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
 
-    // Skins
+// Skins
 route::get('/skins', [SkinsController::class, 'index'])->name('skins');
 route::get('/skin/{username}', [SkinsController::class, 'show'])->name('skins-show');
-    // Profile data
+// Profile data
 route::get('/account/{username}', [AccountController::class, 'index'])->name('account-index');
 route::get('/account/{username}/edit', [AccountController::class, 'edit'])->name('account-edit');
 route::post('/account/store', [AccountController::class, 'store'])->name('account-store');
 route::put('/account/{id}/update', [AccountController::class, 'update'])->name('account-update');
 route::delete('/account/{id}/delete', [AccountController::class, 'delete'])->name('account-delete');
-    // Summoner lolko
+// Summoner lolko
 route::get('/summoner', [SummonerController::class, 'index'])->name('summoner');
 route::get('/summoner/{username}', [SummonerController::class, 'show'])->name('summoner-show');
 route::get('/summoner/{username}/{matchHistory}', [SummonerController::class, 'matchHistory'])->name('summoner-matchHistory');
+
+Route::post('summoner/search/', [SearchController::class, 'search'])->name('search.summoner');
+
 // route::put('/summoner/{id}/update', [SummonerController::class, 'update'])->name('summoner-update');
-    // patch notes
-route::get('/news', [UpdateController::class,'index'])->name('news');
+// patch notes
+route::get('/news', [UpdateController::class, 'index'])->name('news');
 route::get('/news/lolko', [UpdateController::class, 'lolko'])->name('newsLolko');
 route::get('/news/web', [UpdateController::class, 'web'])->name('newsWeb');
 
 // isAdmin
-Route::group(['middleware' => ['auth', 'admin']], function() {
+Route::group(['middleware' => ['auth', 'admin']], function () {
     route::get('/dashboard', [DashboardController::class, 'index']);
-
 });
 
 
@@ -81,6 +84,4 @@ Route::group(['middleware' => ['auth', 'admin']], function() {
 
 
 // testování
-    route::get('/test', [TesterController::class, 'index']);
-
-
+route::get('/test', [TesterController::class, 'index']);

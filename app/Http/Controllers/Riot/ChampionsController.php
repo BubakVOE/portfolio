@@ -4,83 +4,83 @@ namespace App\Http\Controllers\Riot;
 
 use App\Models\Champion;
 use Illuminate\Http\Request;
+use RiotAPI\LeagueAPI\LeagueAPI;
+use App\Connector\RiotGameConnector;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 use Blood72\Riot\Facades\DataDragonAPI;
-use RiotAPI\LeagueAPI\LeagueAPI;
 
 class ChampionsController extends Controller
 {
 
-// champions - all
+    protected $riot;
+
+    public function __construct()
+    {
+        $this->riot = new RiotGameConnector;
+    }
+
+
     public function index()
     {
-        $test = http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion.json')
-                ->collect();
+        $champions = Champion::with('media')->get();
 
-        $champions = Champion::all();
-
-        $amount = Champion::count();
-
-        return view('pages.champions.index',[
+        return view('pages.champions.index', [
             'champions' => $champions,
-            'amount' => $amount,
+            'amount' => $champions->count(),
         ]);
     }
 
-// show specific champion
-    public function show(Champion $champion, $name)
+    // show specific champion
+    public function show(Champion $champion)
     {
-        $champion = Champion::where('name', $name)->get()[0];
 
-        $champData = Http::get('https://ddragon.leagueoflegends.com/cdn/'.env('patch').'/data/cs_CZ/champion/'.$champion->name.'.json')
-                    ->collect()['data'][$name];
+        $championRiot = $this->riot->getChampion($champion->name);
 
-            $skinsDatas = $champData['skins'];
+        $skinsDatas = $championRiot['skins'];
 
-            $skinsNum = [];
+        $skinsNum = [];
 
-            foreach ($skinsDatas as $skinsData) {
-                $skinsNum [] = $skinsData['num'];
-            }
+        foreach ($skinsDatas as $skinsData) {
+            $skinsNum[] = $skinsData['num'];
+        }
 
         return view('pages.champions.show', [
             'champion' => $champion,
-            'champData' => $champData,
+            'champData' => $championRiot,
             'skinsNum' => $skinsNum,
         ]);
     }
 
-// weekly rotations
+    // weekly rotations
     public function weeklyRotations()
     {
-        $weeklyRotations =app('league-api')->getChampionRotations();
+        $weeklyRotations = app('league-api')->getChampionRotations();
 
-            $freeChampionsId = $weeklyRotations->freeChampionIds;
+        $freeChampionsId = $weeklyRotations->freeChampionIds;
 
-                $freeChampionsData = Champion::whereIn('key', $freeChampionsId)->get();
+        $freeChampionsData = Champion::whereIn('key', $freeChampionsId)->get();
 
-        return view('pages.champions.weeklyRotation',[
+        return view('pages.champions.weeklyRotation', [
             'freeChampionsData' => $freeChampionsData,
         ]);
     }
 
-// newbie rotations
+    // newbie rotations
     public function newbieRotations()
     {
-        $freeRotation =app('league-api')->getChampionRotations();
+        $freeRotation = app('league-api')->getChampionRotations();
 
-            $newbieChampionId = $freeRotation->freeChampionIdsForNewPlayers;
+        $newbieChampionId = $freeRotation->freeChampionIdsForNewPlayers;
 
-            $newbieLevel = $freeRotation->maxNewPlayerLevel;
+        $newbieLevel = $freeRotation->maxNewPlayerLevel;
 
-                $newbieChampionData = Champion::whereIn('key', $newbieChampionId)->get();
+        $newbieChampionData = Champion::whereIn('key', $newbieChampionId)->get();
 
-        return view('pages.champions.newbieRotation',[
+        return view('pages.champions.newbieRotation', [
             'newbieChampionData' => $newbieChampionData,
             'newbieLevel' => $newbieLevel,
         ]);
     }
-
-
 }
