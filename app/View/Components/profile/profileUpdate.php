@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\summoner;
+namespace App\View\Components\profile;
 
 use Illuminate\View\Component;
 
-class summoner-flex extends Component
+class profileUpdate extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class summoner-flex extends Component
      */
     public function render()
     {
-        return view('components.summoner.summoner-flex');
+        return view('components.profile.profile-update');
     }
 }

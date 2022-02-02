@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\home\us;
+namespace App\View\Components\profile;
 
 use Illuminate\View\Component;
 
-class content-mobile extends Component
+class profileAdd extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class content-mobile extends Component
      */
     public function render()
     {
-        return view('components.home.us.content-mobile');
+        return view('components.profile.profile-add');
     }
 }

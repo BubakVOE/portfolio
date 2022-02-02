@@ -11,7 +11,7 @@
                             method="POST"
                             action="{{ route('register') }}">
 
-                    @csrf
+                            @csrf
 
                     <div class="w-full p-3 px-6 py-10">
 
@@ -148,11 +148,16 @@
                         </div>
                     </form>
 
-                    @foreach ($errors->all('<p>:message</p>') as $input_error)
-                    {{ $input_error }}
-                @endforeach
+                    <div class="border-2 absolute ">
+                        @foreach ($errors->all('<p>:message</p>') as $input_error)
+                        {{ $input_error }}
+                        @endforeach
+                    </div>
+
 
                 </div>
+
+
             </div>
         </div>
     </div>

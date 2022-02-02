@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\summoner;
+namespace App\View\Components\nav;
 
 use Illuminate\View\Component;
 
-class summoner-duoq extends Component
+class navbarMobile extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class summoner-duoq extends Component
      */
     public function render()
     {
-        return view('components.summoner.summoner-duoq');
+        return view('components.nav.navbar-mobile');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\profile;
+namespace App\View\Components\nav;
 
 use Illuminate\View\Component;
 
-class profile-add extends Component
+class navbarPc extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class profile-add extends Component
      */
     public function render()
     {
-        return view('components.profile.profile-add');
+        return view('components.nav.navbar-pc');
     }
 }

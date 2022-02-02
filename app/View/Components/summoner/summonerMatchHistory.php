@@ -4,7 +4,7 @@ namespace App\View\Components\summoner;
 
 use Illuminate\View\Component;
 
-class summoner-masteries extends Component
+class summonerMatchHistory extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class summoner-masteries extends Component
      */
     public function render()
     {
-        return view('components.summoner.summoner-masteries');
+        return view('components.summoner.summoner-match-history');
     }
 }

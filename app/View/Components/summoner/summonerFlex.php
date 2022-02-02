@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\home\us;
+namespace App\View\Components\summoner;
 
 use Illuminate\View\Component;
 
-class content-pc extends Component
+class summonerFlex extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class content-pc extends Component
      */
     public function render()
     {
-        return view('components.home.us.content-pc');
+        return view('components.summoner.summoner-flex');
     }
 }

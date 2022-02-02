@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\summoner;
+namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class summoner-match-history extends Component
+class regionSettings extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class summoner-match-history extends Component
      */
     public function render()
     {
-        return view('components.summoner.summoner-match-history');
+        return view('components.region-settings');
     }
 }

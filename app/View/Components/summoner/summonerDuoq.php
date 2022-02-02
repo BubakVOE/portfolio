@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\home\players;
+namespace App\View\Components\summoner;
 
 use Illuminate\View\Component;
 
-class content-pc extends Component
+class summonerDuoq extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class content-pc extends Component
      */
     public function render()
     {
-        return view('components.home.players.content-pc');
+        return view('components.summoner.summoner-duoq');
     }
 }
