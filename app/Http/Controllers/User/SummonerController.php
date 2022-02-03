@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Http;
 class SummonerController extends Controller
 {
 
-
     protected $riot;
+
 
     public function __construct()
     {
@@ -32,6 +32,7 @@ class SummonerController extends Controller
         $matchIds = $this->riot->getSummonerMatchHistoriesIds($summoner, 16);
         $matchHistories = $this->riot->getMatchHistories($matchIds, $summoner);
 
+
         return view('pages.summoner.show', [
             'username' => $username,
             'summoner' => $summoner,
@@ -42,15 +43,15 @@ class SummonerController extends Controller
     }
 
 
-        public function matchHistory($username, $matchHistory)
-        {
+    public function matchHistory($username, $matchHistory)
+    {
 
-            $matchHistory = $this->riot->getMatchDetail($matchHistory);
+        $matchHistory = $this->riot->getMatchDetail($matchHistory);
 
-            return view('pages.summoner.matchHistory', [
-                'username' => $username,
-                'matchHistory' => $matchHistory,
-            ]);
-        }
-
+        return view('pages.summoner.matchHistory', [
+            'username' => $username,
+            'matchHistory' => $matchHistory,
+        ]);
     }
+
+}

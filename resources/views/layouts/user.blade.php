@@ -28,7 +28,7 @@
         <x-nav.navbar-pc/>
     </div>
 
-    <div class="relative top-48">
+    <div class="relative top-36">
         @yield('content')
     </div>
 

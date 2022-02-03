@@ -8,20 +8,18 @@ use Illuminate\Support\Facades\Route;
 // admin
 use App\Http\Controllers\Admin\DashboardController;
 
-// riot
-use App\Http\Controllers\Riot\ChampionsController;
-use App\Http\Controllers\Riot\RunesController;
-use App\Http\Controllers\Riot\SkinsController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\Test\TesterController;
 
 // user
+use App\Http\Controllers\User\SearchController;
 use App\Http\Controllers\User\AccountController;
 use App\Http\Controllers\User\SummonerController;
 
 // web
 use App\Http\Controllers\Web\UpdateController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\ChampionsController;
+use App\Http\Controllers\Web\RunesController;
+use App\Http\Controllers\Web\SkinsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,5 +81,3 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
 
 
-// testování
-route::get('/test', [TesterController::class, 'index']);

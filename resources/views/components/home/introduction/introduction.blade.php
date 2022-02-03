@@ -105,7 +105,7 @@
             </div>
 
             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-                <x-home.champions-active/>
+                <x-home.introduction.champions-active/>
             </div>
 
 

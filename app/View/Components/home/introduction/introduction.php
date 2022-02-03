@@ -1,24 +1,19 @@
 <?php
 
-namespace App\View\Components\summoner;
+namespace App\View\Components\home\introduction;
 
 use Illuminate\View\Component;
 
-class summonerMatchHistory extends Component
+class introduction extends Component
 {
-
-    public $matchId;
-    public $username;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($matchId, $username)
+    public function __construct()
     {
-        $this->matchId = $matchId;
-        $this->username = $username;
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ class summonerMatchHistory extends Component
      */
     public function render()
     {
-        return view('components.summoner.summoner-match-history');
+        return view('components.home.introduction.introduction');
     }
 }

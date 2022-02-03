@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Riot;
+namespace App\Http\Controllers\Web;
 
 use App\Models\Champion;
 use Illuminate\Http\Request;

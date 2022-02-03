@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Riot;
+namespace App\Http\Controllers\Web;
 
 use App\Models\Champion;
 use Illuminate\Http\Request;
@@ -32,7 +32,7 @@ class ChampionsController extends Controller
         ]);
     }
 
-    // show specific champion
+
     public function show(Champion $champion)
     {
 
@@ -53,7 +53,7 @@ class ChampionsController extends Controller
         ]);
     }
 
-    // weekly rotations
+
     public function weeklyRotations()
     {
         $weeklyRotations = app('league-api')->getChampionRotations();
@@ -67,7 +67,7 @@ class ChampionsController extends Controller
         ]);
     }
 
-    // newbie rotations
+
     public function newbieRotations()
     {
         $freeRotation = app('league-api')->getChampionRotations();

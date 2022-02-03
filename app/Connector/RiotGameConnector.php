@@ -18,6 +18,7 @@ class RiotGameConnector
         );
     }
 
+
     public function getSummonerStats($summoner)
     {
         $endpoint = 'https://eun1.api.riotgames.com/lol/league/v4/entries/by-summoner/' . $summoner->id . '?api_key=' . env('RIOT_API_KEY');
@@ -27,16 +28,23 @@ class RiotGameConnector
         return $response->collect();
     }
 
+
     public function getSummonerTopChampionsList($summoner)
     {
         return app('league-api')->getChampionMasteries($summoner->id);
+
+        // return Http::get('https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' . $summoner->id . '?api_key='.env('RIOT_API_KEY'))
+        //             ->collect()
+        //             ->take(5);
     }
+
 
     public function getSummonerMatchHistoriesIds($summoner, $count = 6)
     {
         return Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/' . $summoner->puuid . '/ids?start=0&count=' . $count . '&api_key=' . env('RIOT_API_KEY') . '')
             ->collect();
     }
+
 
     public function getMatchHistories($ids, $summoner)
     {
@@ -47,7 +55,8 @@ class RiotGameConnector
                 $matchHistories = collect([]);
 
                 $ids->each(function ($id) use ($matchHistories) {
-                    $match = Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/' . $id . '?api_key=' . env('RIOT_API_KEY') . '')->collect()['info'];
+                    $match = Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/' . $id . '?api_key=' . env('RIOT_API_KEY') . '')
+                            ->collect()['info'];
 
                     $matchHistories->push($match);
                 });
@@ -57,10 +66,12 @@ class RiotGameConnector
         );
     }
 
+
     public function getMatchDetail($id)
     {
         return Http::get('https://europe.api.riotgames.com/lol/match/v5/matches/' . $id . '?api_key=' . env('RIOT_API_KEY') . '')->collect()['info'];
     }
+
 
     public function getChampion($name)
     {

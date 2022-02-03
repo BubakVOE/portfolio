@@ -7,7 +7,7 @@
 
     <section class="bg-own-lightgray space-y-44 mt-20 ">
 
-        <x-home.home/>
+        <x-home.introduction.introduction/>
 
         <x-home.others/>
 

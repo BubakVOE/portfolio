@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\home;
+namespace App\View\Components\home\introduction;
 
 use Illuminate\View\Component;
 
-class home extends Component
+class championsActive extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class home extends Component
      */
     public function render()
     {
-        return view('components.home.home');
+        return view('components.home.introduction.champions-active');
     }
 }
