@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="bg-own-darkgray">
+    <div class="">
         <div class="md:py-20 m-auto flex items-center w-full md:w-10/12 md:px-2 p-4 ">
             <div class="h-full max-w-md mx-auto rounded-lg overflow-hidden md:max-w-2xl md:w-9/12 w-full bg-gradient-to-br from-own-orange to-gradient-red">
                 <div class="md:flex">
@@ -140,15 +140,25 @@
                         </div>
 
                             <div class="mt-14 md:mt-20 w-full md:w-5/12 md:mx-auto">
-                                <button type="submit" class="h-12 w-full bg-black-lighter text-white rounded hover:bg-black-custom">
+                                <button type="submit" class="transition delay-100 duration-300 ease-in-out group relative w-full py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black-lighter hover:bg-black-custom focus:outline-none">
+
+                                    <span class="absolute left-0 inset-y-0 flex items-center pl-3 ">
+                                        <svg class="h-5 w-5 text-own-orange group-hover:text-own-red group-hover:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+
+                                        <svg class="h-5 w-5 text-own-orange group-hover:text-own-red group-hover:block hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                                        </svg>
+                                    </span>
+
                                     Zaregistrovat se
-                                    <i class="fa fa-long-arrow-right"></i>
                                 </button>
                             </div>
                         </div>
                     </form>
 
-                    <div class="border-2 absolute ">
+                    <div class="absolute ">
                         @foreach ($errors->all('<p>:message</p>') as $input_error)
                         {{ $input_error }}
                         @endforeach

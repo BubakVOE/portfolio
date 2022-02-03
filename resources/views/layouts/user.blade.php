@@ -22,18 +22,17 @@
 
 
 
-<body>
+<body class="bg-own-lightgray ">
 
-    <div class="relative bg-black-lighter border-b  border-own-darkgray">
-        <x-nav.navbar-mobile/>
+    <div class="relative">
         <x-nav.navbar-pc/>
     </div>
 
-    <div class="relative h-full w-full bg-own-lightgray pb-32 ">
+    <div class="relative top-48">
         @yield('content')
     </div>
 
-    <div class="bg-black-lighter">
+    <div class="bg-black-lighter mt-64  ">
         <x-footer/>
     </div>
 
@@ -42,6 +41,30 @@
 <script src="{{ asset('js/app.js') }}"></script>
 
 <script>
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "0px 0px";
+    document.getElementById("navbar").style.backgroundColor = 'rgba(0, 1, 0, 0.95)';
+    document.getElementById("logo").style.fontSize = "15px";
+    document.getElementById("imgLogo").style.width = "160px";
+    document.getElementById("hamburger").style.width = "50px";
+    document.getElementById("hamburger").style.height = "50px";
+  } else {
+    document.getElementById("navbar").style.padding = "8px 0px";
+    document.getElementById("navbar").style.backgroundColor = 'rgba(23,23,23, 0.95)';
+    document.getElementById("logo").style.fontSize = "24px";
+    document.getElementById("imgLogo").style.width = "220px";
+    document.getElementById("hamburger").style.width = "64px";
+    document.getElementById("hamburger").style.height = "64px";
+  }
+}
+
+
+
     function hamburgerToggle() {
         var x = document.getElementById("hamburgerLinks");
         if (x.style.display === "block") {
@@ -54,7 +77,7 @@
     function champToggle() {
         var x = document.getElementById("champLinks");
         if (x.style.display === "block") {
-            x.style.display = "none";   
+            x.style.display = "none";
         } else {
             x.style.display = "block";
         }
