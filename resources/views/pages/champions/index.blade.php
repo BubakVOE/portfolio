@@ -2,61 +2,130 @@
 
 @section('content')
 
-    <section class="bg-own-lightgray">
+    <section >
 
-        <nav>
-            <ol role="list" class="max-w-2xl py-4 border-b border-own-darkgray mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
-
-                <li class="flex items-center">
-                    <a href="{{ route('domu') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                        </svg>
-                    </a>
-                </li>
-
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-old" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        <ol role="list" class="max-w-2xl py-4 border-b border-own-darkgray mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8">
+            <li class="flex items-center">
+                <a href="{{ route('domu') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                     </svg>
-                </li>
+                </a>
+            </li>
 
-                <li>
-                    <div class="flex items-center">
-                        <a href="{{ route('champions') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
-                            Champions
-                        </a>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-old" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+            </li>
+
+            <li>
+                <div class="flex items-center">
+                    <a href="{{ route('champions') }}" class="mr-2 text-sm font-medium text-black-custom capitalize">
+                        Champions
+                    </a>
+                </div>
+            </li>
+        </ol>
+
+        <div class="lg:w-full py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col items-center justify-center  ">
+                <h1 class="text-4xl  text-center lg:text-left tracking-tight font-extrabold sm:text-5xl md:text-6xl uppercase font-poppins text-transparent bg-clip-text bg-gradient-to-r from-gradient-red to-own-orange">
+                    Postavy
+                </h1>
+
+                <h1 class="block text-xl text-gray-500">
+                    počet postav <span class="font-bold tracking-tight ">{{ $amount }}</span>
+                </h1>
+            </div>
+
+            <div class="w-8/12 mx-auto pt-16 sm:pt-24">
+                <div class="text-center space-y-5 my-10 block lg:hidden">
+                    <div class="text-center ">
+                        <button onclick="mobileToggle()" type="button" class="text-gray-400 lg:hidden bg-gray-600 p-2">
+                            <span class="sr-only">Filters</span>
+
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
                     </div>
-                </li>
 
-            </ol>
-        </nav>
+                    <div class="bg-gray-400 p-2  rounded-lg ">
+                        <div class="flex justify-between rounded bg-yellow-custom">
+                            <input
+                                type="text"
+                                class="rounded outline-none focus:ring-0 border-0 bg-yellow-custom"
+                                placeholder="Search..."
+                                >
 
-        <div class="lg:w-full">
-            <div class="py-16 px-4 sm:py-24 sm:px-6 lg:px-8" >
-
-                <div class="">
-
-                    <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl uppercase font-poppins  text-transparent bg-clip-text bg-gradient-to-r from-gradient-red to-own-orange pt-2">
-                        postavy
-                    </h1>
-
-                    <div class="text-left flex flex-col my-5">
-
-                        <span class="block font-bold text-xl text-gray-700">
-                            počet postav <span class="font-extrabold tracking-tight text-own-orange">{{ $amount }}
-                        </span>
-
-                        <span class="block font-bold text-xl text-gray-700">
-                            verze patche <span class="font-extrabold tracking-tight text-own-orange">{{ env('patch') }}</span>
-                        </span>
-
-                        <span class="block font-bold text-xl text-gray-700">
-                            nejnovější patch <span class="font-extrabold tracking-tight text-own-orange">{{ Http::get('https://ddragon.leagueoflegends.com/api/versions.json')[0] }}</span>
-                        </span>
-
+                            <button class="flex items-center justify-center px-4 ">
+                                <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
+
+            {{-- search bar --}}
+                <div class="hidden lg:grid grid-cols-4 place-items-center shadow-outSmaller bg-gray-300 px-3 rounded-lg">
+                {{-- vyhledávání --}}
+                    <div class="flex rounded bg-white  shadow-inner">
+                        <input
+                            type="text"
+                            class="pl-0 pr-4 py-2 w-44 xl:w-8/12 mx-auto rounded outline-none focus:ring-0 border-0 bg-transparent "
+                            placeholder="Například: Master yi"
+                            >
+
+                        <button class="flex items-center justify-center pr-2 xl:px-4 ">
+                            <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                {{-- free rotace --}}
+                    <div class="flex flex-row items-center justify-center lg:space-x-10 py-2 xl:w-8/12 mx-auto   ">
+                        <img class="rounded p-2 w-10 h-10 xl:w-12 xl:h-12 bg-white shadow-inner transition delay-100 duration-300 ease-in-out hover:bg-red-custom " src="{{ asset('img/searchBar/byt.png') }}" alt="">
+                        <img class="rounded p-2 w-10 h-10 xl:w-12 xl:h-12 bg-white shadow-inner transition delay-100 duration-300 ease-in-out hover:bg-red-custom " src="{{ asset('img/searchBar/dum.png') }}" alt="">
+                    </div>
+
+                {{-- role --}}
+                    <select name="" class="bg-yellow-custom border-0 ring-0 focus:ring-0 rounded my-3 xl:w-8/12 mx-auto   ">
+                        <option value="">top</option>
+                        <option value="">jungle</option>
+                        <option value="">mid</option>
+                        <option value="">adc</option>
+                        <option value="">supp</option>
+                    </select>
+
+                {{-- obtížnost --}}
+                    <select name="" class="bg-yellow-custom border-0 ring-0 focus:ring-0 rounded my-3 xl:w-8/12 mx-auto   ">
+                        <option value="">easy</option>
+                        <option value="">medium</option>
+                        <option value="">hard</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-20 w-10/12 mx-auto grid grid-cols-1 place-items-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg px-4 py-24 md:px-16 md:py-16">
+                @foreach ($champions as $champion)
+                    <x-champions.champion-card :champion="$champion"/>
+                @endforeach
+
+                @empty($champion)
+                    <h1 class="text-center font-bold uppercase ">Žádné data nebyly načteny</h1>
+                @endempty
+            </div>
+
+
+
 
             {{-- MOBILE searchbar MOBILE --}}
                 <div id="mobileToggles" class="hidden fixed inset-0  z-40 lg:hidden" role="dialog" aria-modal="true">
@@ -184,92 +253,9 @@
                     </div>
                 </div>
 
-            {{--PC search bar PC --}}
-                <div class="w-8/12 mx-auto">
-                    <div class="w-11/12 mx-auto text-center space-y-5 my-10 block lg:hidden">
-                        <div class="text-center ">
-                            <button onclick="mobileToggle()" type="button" class="text-gray-400 lg:hidden bg-gray-600 p-2">
-                                <span class="sr-only">Filters</span>
 
-                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
 
-                        <div class="bg-gray-400 p-2  rounded-lg ">
-                            <div class="flex justify-between rounded bg-yellow-custom">
-                                <input
-                                    type="text"
-                                    class="rounded outline-none focus:ring-0 border-0 bg-yellow-custom"
-                                    placeholder="Search..."
-                                    >
 
-                                <button class="flex items-center justify-center px-4 ">
-                                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                {{-- search bar --}}
-                    <div class="hidden lg:grid grid-cols-4 place-items-center shadow-outSmaller bg-gray-300 px-3 rounded-lg">
-                    {{-- vyhledávání --}}
-                        <div class="flex rounded bg-white  shadow-inner">
-                            <input
-                                type="text"
-                                class="pl-0 pr-4 py-2 w-44 xl:w-8/12 mx-auto rounded outline-none focus:ring-0 border-0 bg-transparent "
-                                placeholder="Například: Master yi"
-                                >
-
-                            <button class="flex items-center justify-center pr-2 xl:px-4 ">
-                                <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                                </svg>
-                            </button>
-                        </div>
-
-                    {{-- free rotace --}}
-                        <div class="flex flex-row items-center justify-center lg:space-x-10 py-2 xl:w-8/12 mx-auto   ">
-                            <img class="rounded p-2 w-10 h-10 xl:w-12 xl:h-12 bg-white shadow-inner transition delay-100 duration-300 ease-in-out hover:bg-red-custom " src="{{ asset('img/searchBar/byt.png') }}" alt="">
-                            <img class="rounded p-2 w-10 h-10 xl:w-12 xl:h-12 bg-white shadow-inner transition delay-100 duration-300 ease-in-out hover:bg-red-custom " src="{{ asset('img/searchBar/dum.png') }}" alt="">
-                        </div>
-
-                    {{-- role --}}
-                        <select name="" class="bg-yellow-custom border-0 ring-0 focus:ring-0 rounded my-3 xl:w-8/12 mx-auto   ">
-                            <option value="">top</option>
-                            <option value="">jungle</option>
-                            <option value="">mid</option>
-                            <option value="">adc</option>
-                            <option value="">supp</option>
-                        </select>
-
-                    {{-- obtížnost --}}
-                        <select name="" class="bg-yellow-custom border-0 ring-0 focus:ring-0 rounded my-3 xl:w-8/12 mx-auto   ">
-                            <option value="">easy</option>
-                            <option value="">medium</option>
-                            <option value="">hard</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="mt-20 w-10/12 mx-auto grid grid-cols-1 place-items-center gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 bg-gradient-to-br from-own-orange to-gradient-red rounded-lg px-4 py-24 md:px-16 md:py-16">
-                    @foreach ($champions as $champion)
-                        <x-champions.champion-card :champion="$champion"/>
-                    @endforeach
-
-                    @empty($champion)
-                        <h1 class="text-center font-bold uppercase ">Žádné data nebyly načteny</h1>
-                    @endempty
-                </div>
-
-            </div>
 
         </div>
 

@@ -32,7 +32,6 @@ class SummonerController extends Controller
         $matchIds = $this->riot->getSummonerMatchHistoriesIds($summoner, 16);
         $matchHistories = $this->riot->getMatchHistories($matchIds, $summoner);
 
-
         return view('pages.summoner.show', [
             'username' => $username,
             'summoner' => $summoner,

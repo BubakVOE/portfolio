@@ -108,6 +108,8 @@ module.exports = {
                 gradient: {
                     'red': '#DA0037',
                     'black': '#171717',
+                    'lightG':'#494949',
+                    'darkG':'#3d3d3d',
                 },
                 blue: {
                     'light':'#00d9ff',
@@ -116,11 +118,16 @@ module.exports = {
                 },
             },
 
+            boxShadow: {
+                inset: 'inset 7px 7px 48px #2c2c2c, inset -7px -7px 48px #5c5c5c',
+                out :         '7px 7px 48px #2c2c2c, -7px -7px 48px #5c5c5c',
+            },
+
         },
     },
     plugins: [
         require('@tailwindcss/aspect-ratio'),
-        
+
       ],
 
 }

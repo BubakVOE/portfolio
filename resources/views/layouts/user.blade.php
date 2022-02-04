@@ -22,13 +22,13 @@
 
 
 
-<body class="bg-own-lightgray ">
+<body class="bg-own-lightgray  ">
 
     <div class="relative">
         <x-nav.navbar-pc/>
     </div>
 
-    <div class="relative top-36">
+    <div class="relative xl:top-28 top-[105px]">
         @yield('content')
     </div>
 

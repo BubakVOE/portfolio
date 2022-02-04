@@ -1,5 +1,5 @@
 <section class="relative">
-    <h1 class="hidden xl:block absolute uppercase text-6xl font-Raleway font-extrabold -top-28 left-5 transform opacity-30 ">
+    <h1 class="hidden xl:block absolute uppercase text-6xl font-Raleway font-extrabold -top-16 left-5 transform opacity-30 ">
         domů
     </h1>
 
@@ -80,27 +80,27 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-start bg-own-darkgray mr-36 relative rounded-r-lg ">
+        <div class="flex items-center justify-start bg-own-darkgray mr-20 relative rounded-r-lg px-5 ">
 
             <div>
                 <div class="mySlides fade  ">
-                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-11/12 lg:h-full rounded-r-xl  " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg">
+                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-r-xl  " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg">
                 </div>
 
                 <div class="mySlides fade  ">
-                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-11/12 lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_2.jpg">
+                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_2.jpg">
                 </div>
 
                 <div class="mySlides fade  ">
-                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-11/12 lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_2.jpg">
+                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_2.jpg">
                 </div>
 
                 <div class="mySlides fade  ">
-                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-11/12 lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_3.jpg">
+                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_3.jpg">
                 </div>
 
                 <div class="mySlides fade  ">
-                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-11/12 lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_2.jpg">
+                    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full rounded-r-xl " src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_2.jpg">
                 </div>
             </div>
 
