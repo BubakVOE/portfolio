@@ -53,12 +53,16 @@ route::get('/rune/{id}', [RunesController::class, 'show'])->name('runes-show');
 // Skins
 route::get('/skins', [SkinsController::class, 'index'])->name('skins');
 route::get('/skin/{username}', [SkinsController::class, 'show'])->name('skins-show');
+
 // Profile data
 route::get('/account/{username}', [AccountController::class, 'index'])->name('account-index');
 route::get('/account/{username}/edit', [AccountController::class, 'edit'])->name('account-edit');
 route::post('/account/store', [AccountController::class, 'store'])->name('account-store');
 route::put('/account/{id}/update', [AccountController::class, 'update'])->name('account-update');
 route::delete('/account/{id}/delete', [AccountController::class, 'delete'])->name('account-delete');
+//crypto
+   //bitcoin -> eth
+   //eth -> doge
 // Summoner lolko
 route::get('/summoner', [SummonerController::class, 'index'])->name('summoner');
 route::get('/summoner/{username}', [SummonerController::class, 'show'])->name('summoner-show');

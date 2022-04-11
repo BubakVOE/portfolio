@@ -115,6 +115,7 @@ module.exports = {
                     'light':'#00d9ff',
                     'dark':'#0011ff',
                     'glass':'#577AB4',
+                    'new':'#099bdd',
                 },
             },
 

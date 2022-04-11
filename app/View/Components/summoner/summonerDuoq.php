@@ -6,14 +6,16 @@ use Illuminate\View\Component;
 
 class summonerDuoq extends Component
 {
+
+    public $summonerData;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($summonerData)
     {
-        //
+        $this->summonerData=$summonerData;
     }
 
     /**
